@@ -1,0 +1,1 @@
+//Classe reprénsentant un monstre

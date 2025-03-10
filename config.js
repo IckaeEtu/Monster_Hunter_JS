@@ -1,0 +1,1 @@
+//Contiendra la configuration de l'application, notamment l'URL de l'API json-server.

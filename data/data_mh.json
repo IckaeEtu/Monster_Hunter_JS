@@ -1,0 +1,647 @@
+{
+"chasseurs": [
+        {
+            "id": 1,
+            "nom": "Aiden",
+            "rang_de_chasseur": 86,
+            "specialisation": "Épéiste",
+            "armeEquipee": 1,
+            "monstresFavoris": [
+                1,
+                3
+            ],
+            "notes": 4.5,
+            "setArmureEquipee": 1
+        },
+        {
+            "id": 2,
+            "nom": "Lyra",
+            "rang_de_chasseur": 12,
+            "specialisation": "Artilleur",
+            "armeEquipee": 2,
+            "monstresFavoris": [
+                2
+            ],
+            "notes": 3.8,
+            "setArmureEquipee": 4
+        },
+        {
+            "id": 3,
+            "nom": "Hanz",
+            "rang_de_chasseur": 45,
+            "specialisation": "Épéiste",
+            "armeEquipee": 3,
+            "monstresFavoris": [
+                3,
+                4
+            ],
+            "notes": 5,
+            "setArmureEquipee": 3
+        }
+    ],
+    "armes": [
+        {
+            "id": 1,
+            "nom": "Lame Wyvern \"Érable\"",
+            "type": "Grande épée",
+            "attaque": 120,
+            "element": "Feu"
+        },
+        {
+            "id": 2,
+            "nom": "Arc de chasseur II",
+            "type": "Arc",
+            "attaque": 80,
+            "element": null
+        },
+        {
+            "id": 3,
+            "nom": "Destruction du Nergigante",
+            "type": "Epée longue",
+            "attaque": 180,
+            "element": "Dragon"
+        }
+    ],
+    "monstres": [
+        {
+            "id": 1,
+            "nom": "Rathalos",
+            "type_id": [
+                7
+            ],
+            "environnement_id": [
+                1
+            ],
+            "faiblesses": [
+                "Eau",
+                "Glace"
+            ],
+            "materiaux": [
+                "Écaille de Rathalos",
+                "Griffe de Rathalos"
+            ],
+            "notes": 4.2
+        },
+        {
+            "id": 2,
+            "nom": "Khezu",
+            "type_id": [
+                3
+            ],
+            "environnement_id": [
+                2
+            ],
+            "faiblesses": [
+                "Foudre",
+                "Glace"
+            ],
+            "materiaux": [
+                "Peau de Khezu",
+                "Cerveau de Khezu"
+            ],
+            "notes": 4.8
+        },
+        {
+            "id": 3,
+            "nom": "Tigrex",
+            "type_id": [
+                6
+            ],
+            "environnement_id": [
+                1
+            ],
+            "faiblesses": [
+                "Glace",
+                "Eau"
+            ],
+            "materiaux": [
+                "Griffes de Tigrex",
+                "Peau de Tigrex"
+            ],
+            "notes": 4.9
+        },
+        {
+            "id": 4,
+            "nom": "Zinogre",
+            "type_id": [
+                7
+            ],
+            "environnement_id": [
+                2
+            ],
+            "faiblesses": [
+                "Glace",
+                "Eau"
+            ],
+            "materiaux": [
+                "Écaille de Zinogre",
+                "Corne de Zinogre"
+            ],
+            "notes": 4.9
+        },
+        {
+            "id": 5,
+            "nom": "Brachydios",
+            "type_id": [
+                2
+            ],
+            "environnement_id": [
+                2
+            ],
+            "faiblesses": [
+                "Eau",
+                "Glace"
+            ],
+            "materiaux": [
+                "Peau de Brachydios",
+                "Sphères de Brachydios"
+            ],
+            "notes": 4.5
+        },
+        {
+            "id": 6,
+            "nom": "Nargacuga",
+            "type_id": [
+                6
+            ],
+            "environnement_id": [
+                1
+            ],
+            "faiblesses": [
+                "Foudre",
+                "Eau"
+            ],
+            "materiaux": [
+                "Ailes de Nargacuga",
+                "Griffes de Nargacuga"
+            ],
+            "notes": 4.6
+        },
+        {
+            "id": 7,
+            "nom": "Zorah Magdaros",
+            "type_id": [
+                3
+            ],
+            "environnement_id": [
+                2
+            ],
+            "faiblesses": [
+                "Eau",
+                "Glace"
+            ],
+            "materiaux": [
+                "Écailles de Zorah Magdaros",
+                "Flammes de Zorah Magdaros"
+            ],
+            "notes": 4.7
+        },
+        {
+            "id": 8,
+            "nom": "Legiana",
+            "type_id": [
+                4
+            ],
+            "environnement_id": [
+                3
+            ],
+            "faiblesses": [
+                "Feu",
+                "Foudre"
+            ],
+            "materiaux": [
+                "Ailes de Legiana",
+                "Peau de Legiana"
+            ],
+            "notes": 4.4
+        },
+        {
+            "id": 9,
+            "nom": "Diablos",
+            "type_id": [
+                10
+            ],
+            "environnement_id": [
+                4
+            ],
+            "faiblesses": [
+                "Eau",
+                "Glace"
+            ],
+            "materiaux": [
+                "Cornes de Diablos",
+                "Peau de Diablos"
+            ],
+            "notes": 4.8
+        },
+        {
+            "id": 10,
+            "nom": "Nergigante",
+            "type_id": [
+                12
+            ],
+            "environnement_id": [
+                2
+            ],
+            "faiblesses": [
+                "Glace",
+                "Eau"
+            ],
+            "materiaux": [
+                "Cornes de Nergigante",
+                "Regeneration de Nergigante"
+            ],
+            "notes": 4.9
+        },
+        {
+            "id": 11,
+            "nom": "Lunastra",
+            "type_id": [
+                7
+            ],
+            "environnement_id": [
+                1
+            ],
+            "faiblesses": [
+                "Eau",
+                "Glace"
+            ],
+            "materiaux": [
+                "Écailles de Lunastra",
+                "Flammes de Lunastra"
+            ],
+            "notes": 4.8
+        },
+        {
+            "id": 12,
+            "nom": "Vaal Hazak",
+            "type_id": [
+                3
+            ],
+            "environnement_id": [
+                5
+            ],
+            "faiblesses": [
+                "Eau",
+                "Glace"
+            ],
+            "materiaux": [
+                "Peau de Vaal Hazak",
+                "Crocs de Vaal Hazak"
+            ],
+            "notes": 4.6
+        },
+        {
+            "id": 13,
+            "nom": "Kushala Daora",
+            "type_id": [
+                3
+            ],
+            "environnement_id": [
+                6
+            ],
+            "faiblesses": [
+                "Feu",
+                "Foudre"
+            ],
+            "materiaux": [
+                "Écailles de Kushala Daora",
+                "Griffes de Kushala Daora"
+            ],
+            "notes": 4.5
+        },
+        {
+            "id": 14,
+            "nom": "Teostra",
+            "type_id": [
+                12
+            ],
+            "environnement_id": [
+                1
+            ],
+            "faiblesses": [
+                "Eau",
+                "Glace"
+            ],
+            "materiaux": [
+                "Flammes de Teostra",
+                "Écailles de Teostra"
+            ],
+            "notes": 4.7
+        }
+    ],
+    "environnements": [
+        {
+            "id": 1,
+            "nom": "Forêt et marais",
+            "zones": [
+                "zone_1",
+                "zone_2"
+            ],
+            "habitats": [
+                "plaine",
+                "forêt dense"
+            ]
+        },
+        {
+            "id": 2,
+            "nom": "Volcan",
+            "zones": [
+                "zone_1",
+                "zone_2"
+            ],
+            "habitats": [
+                "sol rocheux",
+                "lave"
+            ]
+        },
+        {
+            "id": 3,
+            "nom": "Prairies glacées",
+            "zones": [
+                "zone_1",
+                "zone_2"
+            ],
+            "habitats": [
+                "neige",
+                "glaciers"
+            ]
+        },
+        {
+            "id": 4,
+            "nom": "Désert",
+            "zones": [
+                "zone_1",
+                "zone_2"
+            ],
+            "habitats": [
+                "sable",
+                "ruines"
+            ]
+        },
+        {
+            "id": 5,
+            "nom": "Cavernes souterraines",
+            "zones": [
+                "zone_1",
+                "zone_2"
+            ],
+            "habitats": [
+                "obscurité",
+                "mines"
+            ]
+        },
+        {
+            "id": 6,
+            "nom": "Plaines sèches",
+            "zones": [
+                "zone_1",
+                "zone_2"
+            ],
+            "habitats": [
+                "savanes",
+                "prairies ouvertes"
+            ]
+        },
+        {
+            "id": 7,
+            "nom": "Îles tropicales",
+            "zones": [
+                "zone_1",
+                "zone_2"
+            ],
+            "habitats": [
+                "plages",
+                "forêts humides"
+            ]
+        }
+    ],
+    "types_de_monstres": [
+        {
+            "id": 1,
+            "nom": "Bêtes à crocs"
+        },
+        {
+            "id": 2,
+            "nom": "Léviathan"
+        },
+        {
+            "id": 3,
+            "nom": "Dragon ancien"
+        },
+        {
+            "id": 4,
+            "nom": "Aérien"
+        },
+        {
+            "id": 5,
+            "nom": "Insectes"
+        },
+        {
+            "id": 6,
+            "nom": "Fauves"
+        },
+        {
+            "id": 7,
+            "nom": "Wyverns"
+        },
+        {
+            "id": 8,
+            "nom": "Poissons"
+        },
+        {
+            "id": 9,
+            "nom": "Amphibiens"
+        },
+        {
+            "id": 10,
+            "nom": "Reptiles"
+        },
+        {
+            "id": 11,
+            "nom": "Golem"
+        },
+        {
+            "id": 12,
+            "nom": "Dragons élémentaires"
+        },
+        {
+            "id": 13,
+            "nom": "Volants"
+        },
+        {
+            "id": 14,
+            "nom": "Céphalopodes"
+        },
+        {
+            "id": 15,
+            "nom": "Chimères"
+        },
+        {
+            "id": 16,
+            "nom": "Géants"
+        }
+    ],
+    "sets_d_armures": [
+        {
+            "id": 1,
+            "nom": "Armure du Rathalos",
+            "monstre_id": 1,
+            "composants": [
+                {
+                    "partie": "Queue",
+                    "quantité": 2
+                },
+                {
+                    "partie": "Ailes",
+                    "quantité": 3
+                },
+                {
+                    "partie": "Écailles",
+                    "quantité": 5
+                }
+            ],
+            "bonus": "Puissance de feu améliorée"
+        },
+        {
+            "id": 2,
+            "nom": "Armure du Khezu",
+            "monstre_id": 2,
+            "composants": [
+                {
+                    "partie": "Peau",
+                    "quantité": 6
+                },
+                {
+                    "partie": "Cerveau",
+                    "quantité": 2
+                },
+                {
+                    "partie": "Os",
+                    "quantité": 4
+                }
+            ],
+            "bonus": "Augmentation de la défense"
+        },
+        {
+            "id": 3,
+            "nom": "Armure du Tigrex",
+            "monstre_id": 3,
+            "composants": [
+                {
+                    "partie": "Griffes",
+                    "quantité": 4
+                },
+                {
+                    "partie": "Queue",
+                    "quantité": 3
+                },
+                {
+                    "partie": "Peau",
+                    "quantité": 5
+                }
+            ],
+            "bonus": "Augmentation de la vitesse d'attaque"
+        },
+        {
+            "id": 4,
+            "nom": "Armure de Zinogre",
+            "monstre_id": 4,
+            "composants": [
+                {
+                    "partie": "Écailles",
+                    "quantité": 4
+                },
+                {
+                    "partie": "Ailes",
+                    "quantité": 3
+                },
+                {
+                    "partie": "Queue",
+                    "quantité": 2
+                }
+            ],
+            "bonus": "Maîtrise de la foudre"
+        },
+        {
+            "id": 5,
+            "nom": "Armure du Brachydios",
+            "monstre_id": 5,
+            "composants": [
+                {
+                    "partie": "Peau",
+                    "quantité": 5
+                },
+                {
+                    "partie": "Queue",
+                    "quantité": 3
+                },
+                {
+                    "partie": "Sphères",
+                    "quantité": 4
+                }
+            ],
+            "bonus": "Résistance à l'explosion"
+        },
+        {
+            "id": 6,
+            "nom": "Armure du Nargacuga",
+            "monstre_id": 6,
+            "composants": [
+                {
+                    "partie": "Ailes",
+                    "quantité": 4
+                },
+                {
+                    "partie": "Queue",
+                    "quantité": 2
+                },
+                {
+                    "partie": "Griffes",
+                    "quantité": 5
+                }
+            ],
+            "bonus": "Vitesse d'esquive augmentée"
+        },
+        {
+            "id": 7,
+            "nom": "Armure de Diablos",
+            "monstre_id": 9,
+            "composants": [
+                {
+                    "partie": "Corne",
+                    "quantité": 5
+                },
+                {
+                    "partie": "Queue",
+                    "quantité": 3
+                },
+                {
+                    "partie": "Peau",
+                    "quantité": 6
+                }
+            ],
+            "bonus": "Augmentation de la défense"
+        },
+        {
+            "id": 8,
+            "nom": "Armure de Teostra",
+            "monstre_id": 14,
+            "composants": [
+                {
+                    "partie": "Flamme",
+                    "quantité": 6
+                },
+                {
+                    "partie": "Queue",
+                    "quantité": 3
+                },
+                {
+                    "partie": "Écailles",
+                    "quantité": 5
+                }
+            ],
+            "bonus": "Puissance de feu accrue"
+        }
+    ]
+}

@@ -1,0 +1,1 @@
+//Classe représentant un set d'amure
