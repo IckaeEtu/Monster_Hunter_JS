@@ -5,17 +5,17 @@ class Chasseur {
      *
      * @param {number} id - L'ID du chasseur.
      * @param {string} nom - Le nom du chasseur.
-     * @param {number} niveau - Le niveau du chasseur.
+     * @param {number} rangDeChasseur - Le niveau du chasseur.
      * @param {string} specialisation - La spécialisation du chasseur.
      * @param {number} armeEquipee - L'ID de l'arme équipée.
      * @param {number[]} monstresFavoris - Un tableau des IDs des monstres favoris.
      * @param {number} notes - La note du chasseur.
      * @param {number} setArmureEquipee - L'ID du set d'armure équipé.
      */
-    constructor(id, nom, niveau, specialisation, armeEquipee, monstresFavoris, notes, setArmureEquipee) {
+    constructor(id, nom, rangDeChasseur, specialisation, armeEquipee, monstresFavoris, notes, setArmureEquipee) {
         this.id = id;
         this.nom = nom;
-        this.niveau = niveau;
+        this.rangDeChasseur = rangDeChasseur;
         this.specialisation = specialisation;
         this.armeEquipee = armeEquipee;
         this.monstresFavoris = monstresFavoris;
@@ -31,8 +31,8 @@ class Chasseur {
         return this.nom;
     }
 
-    getNiveau() {
-        return this.niveau;
+    getRang() {
+        return this.rangDeChasseur;
     }
 
     getSpecialisation() {
