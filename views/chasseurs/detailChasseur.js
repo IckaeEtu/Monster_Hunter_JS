@@ -31,13 +31,34 @@ export async function afficherDetailChasseur(idChasseur) {
         chasseurUl.appendChild(speChasseur);
 
         // Gestion affichage arme
+        let armeChasseur = document.createElement("li");
+        armeChasseur.innerText = `Arme équipée : ${chasseur.getArmeEquipee().getNom()}`;
+        chasseurUl.appendChild(armeChasseur);
 
-        // Gestion affichage monstres fav
+        let armureChasseur = document.createElement("li");
+        armureChasseur.innerText = `Armure équipée : ${chasseur.getArmureEquipee().getNom()}`
+        chasseurUl.appendChild(armureChasseur);
+
+        // Gestion affichage monstres favoris
+        let monstresFav = document.createElement("li");
+        monstresFav.innerText = "Monstres favoris :";
+        let ulMonstres = document.createElement("ul");
+
+        // Pour chaque monstre favori, on ajoute un élément de liste
+        chasseur.getMonstresFavoris().forEach(monstre => {
+            let monstreLi = document.createElement("li");
+            monstreLi.innerText = monstre.getNom();
+            ulMonstres.appendChild(monstreLi);
+        });
+
+        monstresFav.appendChild(ulMonstres);
+        chasseurUl.appendChild(monstresFav);
+
 
         let note = document.createElement("li");
         note.innerText = `Notation : ${chasseur.getNotes()}`;
         chasseurUl.appendChild(note);
-    
+
         content.innerHTML = "";
         content.appendChild(chasseurUl);
 

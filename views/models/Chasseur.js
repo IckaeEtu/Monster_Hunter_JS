@@ -51,7 +51,7 @@ class Chasseur {
         return this.notes;
     }
 
-    getSetArmureEquipee() {
+    getArmureEquipee() {
         return this.setArmureEquipee;
     }
 

@@ -5,7 +5,7 @@ import Chasseur from "./views/models/Chasseur.js";
 import Monstre from "./views/models/Monstre.js";
 import Arme from "./views/models/Arme.js";
 import Armure from "./views/models/Armure.js"; // Assurez-vous d'avoir le modèle Armure
-import TypeMonstre from "./views/models/TypeMonstre.js"; // Assurez-vous d'avoir le modèle TypeMonstre
+import TypeMonstre from "./views/models/Type.js"; // Assurez-vous d'avoir le modèle TypeMonstre
 import Environnement from "./views/models/Environnement.js"; // Assurez-vous d'avoir le modèle Environnement
 
 export async function getChasseurs() {
@@ -310,7 +310,7 @@ export async function getArmures() {
     }
 }
 
-export async function getTypesMonstre() {
+export async function getAllTypesMonstre() {
     try {
         const response = await fetch(`${config.apiUrl}/types_de_monstres`);
         if (!response.ok) {
