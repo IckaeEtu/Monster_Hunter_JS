@@ -1,13 +1,14 @@
 import { getChasseurs } from "../../provider.js";
 import Chasseur from "../models/Chasseur.js";
-import { ajouterFavoris } from views;
+import { ajouterFavoriChasseur, supprimerFavoriChasseur, estFavoriChasseur } from '/utils/favorisChasseurs.js';
 
 export async function afficherDetailChasseur(idChasseur) {
-    console.log("Affichage de la liste des chasseurs")
+    console.log("Affichage de la liste des chasseurs");
+
     const chasseurMap = await getChasseurs();
     console.log(chasseurMap);
-    console.log(chasseurMap instanceof Map)
-    content = document.getElementById("content");
+    console.log(chasseurMap instanceof Map);
+    let content = document.getElementById("content");
 
     if (!content) {
         console.error("L'élément 'content' n'a pas été trouvé.");
@@ -37,7 +38,7 @@ export async function afficherDetailChasseur(idChasseur) {
         chasseurUl.appendChild(armeChasseur);
 
         let armureChasseur = document.createElement("li");
-        armureChasseur.innerText = `Armure équipée : ${chasseur.getArmureEquipee().getNom()}`
+        armureChasseur.innerText = `Armure équipée : ${chasseur.getArmureEquipee().getNom()}`;
         chasseurUl.appendChild(armureChasseur);
 
         // Gestion affichage monstres favoris
@@ -55,7 +56,6 @@ export async function afficherDetailChasseur(idChasseur) {
         monstresFav.appendChild(ulMonstres);
         chasseurUl.appendChild(monstresFav);
 
-
         let note = document.createElement("li");
         note.innerText = `Notation : ${chasseur.getNotes()}`;
         chasseurUl.appendChild(note);
@@ -63,8 +63,24 @@ export async function afficherDetailChasseur(idChasseur) {
         content.innerHTML = "";
         content.appendChild(chasseurUl);
 
-    }
+        // Gestion du bouton favori
+        const boutonFavori = document.createElement('button');
+        boutonFavori.textContent = estFavoriChasseur(chasseur.getId()) ? 'Supprimer des favoris' : 'Ajouter aux favoris';
 
+        boutonFavori.addEventListener('click', () => {
+            toggleFavori(chasseur.getId(), boutonFavori);
+        });
+
+        content.appendChild(boutonFavori); // Ajouter le bouton à la fin du contenu
+    }
 }
 
-
+function toggleFavori(idChasseur, bouton) {
+    if (estFavoriChasseur(idChasseur)) {
+        supprimerFavoriChasseur(idChasseur);
+        bouton.textContent = 'Ajouter aux favoris';
+    } else {
+        ajouterFavoriChasseur(idChasseur);
+        bouton.textContent = 'Supprimer des favoris';
+    }
+}
