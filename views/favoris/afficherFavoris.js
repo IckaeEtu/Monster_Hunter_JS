@@ -15,7 +15,7 @@ export function afficherFavoris() {
 
         let lienDetail = document.createElement("a");
         lienDetail.href = `#/chasseurs/${chasseur.getId()}`;
-        lienDetail.textContent = "(Détails)";
+        lienDetail.textContent = " (Détails)";
         chasseurLi.appendChild(lienDetail);
 
         listeChasseurUl.appendChild(chasseurLi);
@@ -26,7 +26,7 @@ export function afficherFavoris() {
  * Permet d'ajouter un chasseur a sa liste de chasseur favoris
  * @param {int} idChasseur id d'un chasseur
  */
-function ajouterFavori(idChasseur) {
+function ajouterFavoris(idChasseur) {
 
     let favoris = JSON.parse(localStorage.getItem('favoris')) || [];
 

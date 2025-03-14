@@ -1,5 +1,6 @@
 import { getChasseurs } from "../../provider.js";
 import Chasseur from "../models/Chasseur.js";
+import { ajouterFavoris } from views;
 
 export async function afficherDetailChasseur(idChasseur) {
     console.log("Affichage de la liste des chasseurs")

@@ -20,7 +20,7 @@ function router() {
             if (segments.length === 2) { // Vérifier la longueur
                 afficherListeChasseurs();
             } else if (segments.length === 3) {
-                const id = String(segments[2]); // Utiliser segments[1]
+                const id = String(segments[2]);
                 if (!isNaN(id)) {
                     afficherDetailChasseur(id);
                 } else {
