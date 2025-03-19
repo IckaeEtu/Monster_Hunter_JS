@@ -1,5 +1,7 @@
-import { getChasseurs } from "../../provider.js";
+import { getChasseurs, getArmes } from "../../provider.js";
 import Chasseur from "../models/Chasseur.js";
+import Arme from "../models/Arme.js";
+import { ajouterObjet } from "../../utils/inventaire.js";
 import { ajouterFavoriChasseur, supprimerFavoriChasseur, estFavoriChasseur } from '/utils/favorisChasseurs.js';
 
 export async function afficherDetailChasseur(idChasseur) {
@@ -34,7 +36,25 @@ export async function afficherDetailChasseur(idChasseur) {
 
         // Gestion affichage arme
         let armeChasseur = document.createElement("li");
-        armeChasseur.innerText = `Arme équipée : ${chasseur.getArmeEquipee().getNom()}`;
+        armeChasseur.innerText = "Arme équipée : ";
+        
+        let listesArmes = document.createElement("select");
+        listesArmes.setAttribute("id", "listeArmes");
+        
+        let armes = await getArmes();
+        
+        armes.forEach(arme => {
+            let option = document.createElement("option");
+            option.value = arme.getId();
+            option.textContent = arme.getNom();
+        
+            if (chasseur.getArmeEquipee() && arme.getId() === chasseur.getArmeEquipee().getId()) {
+                option.selected = true;
+            }
+        
+            listesArmes.appendChild(option);
+        });
+        armeChasseur.appendChild(listesArmes);
         chasseurUl.appendChild(armeChasseur);
 
         let armureChasseur = document.createElement("li");
@@ -50,6 +70,19 @@ export async function afficherDetailChasseur(idChasseur) {
         chasseur.getMonstresFavoris().forEach(monstre => {
             let monstreLi = document.createElement("li");
             monstreLi.innerText = monstre.getNom();
+
+            // Bouton chasser
+            const chasserButton = document.createElement('button');
+            chasserButton.innerText = 'Chasser';
+            chasserButton.addEventListener('click', () => {
+                const materiauxObtenus = genererMateriauxAleatoires(monstre);
+                materiauxObtenus.forEach(objet => {
+                    ajouterObjet(objet.nom, objet.qte);
+                });
+                //afficherDetailChasseur(idChasseur); // Recharger la vue
+            })
+
+            monstreLi.appendChild(chasserButton);
             ulMonstres.appendChild(monstreLi);
         });
 
@@ -83,4 +116,15 @@ function toggleFavori(idChasseur, bouton) {
         ajouterFavoriChasseur(idChasseur);
         bouton.textContent = 'Supprimer des favoris';
     }
+}
+
+function genererMateriauxAleatoires(monstre) {
+    const materiaux = monstre.getMateriaux();
+    const materiauxObtenus = [];
+    materiaux.forEach(nomMateriaux => {
+        const qte = Math.floor(Math.random() *3);
+        materiauxObtenus.push({nom: nomMateriaux, qte});
+    });
+    console.log(materiauxObtenus);
+    return materiauxObtenus;
 }

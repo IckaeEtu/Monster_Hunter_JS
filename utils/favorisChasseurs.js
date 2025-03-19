@@ -1,4 +1,4 @@
-// src/api/favorisChasseurs.js
+// utils/favorisChasseurs.js
 
 import { getFromStorage, saveToStorage } from './storage.js';
 
