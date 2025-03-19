@@ -1,0 +1,17 @@
+/* Style de détail chasseur */
+
+.chasseur-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.info-card, .equipement-card, .monstres-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.info-card h2, .equipement-card h2, .monstres-card h2 {
+    margin-top: 0;
+}

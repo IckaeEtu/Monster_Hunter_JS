@@ -4,9 +4,9 @@ import config from "./config.js";
 import Chasseur from "./views/models/Chasseur.js";
 import Monstre from "./views/models/Monstre.js";
 import Arme from "./views/models/Arme.js";
-import Armure from "./views/models/Armure.js"; // Assurez-vous d'avoir le modèle Armure
-import TypeMonstre from "./views/models/Type.js"; // Assurez-vous d'avoir le modèle TypeMonstre
-import Environnement from "./views/models/Environnement.js"; // Assurez-vous d'avoir le modèle Environnement
+import Armure from "./views/models/Armure.js";
+import TypeMonstre from "./views/models/Type.js";
+import Environnement from "./views/models/Environnement.js";
 
 export async function getChasseurs() {
     try {
