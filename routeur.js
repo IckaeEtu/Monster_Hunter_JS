@@ -5,6 +5,7 @@
 import { afficherDetailChasseur } from "./views/chasseurs/detailChasseur.js";
 import { afficherListeChasseurs } from "./views/chasseurs/listeChasseurs.js";
 import { afficherPageAccueil } from "./views/common/accueil.js";
+import { afficherFavorisChasseurs } from "./views/favoris/afficherFavoris.js";
 
 function router() {
     console.log(window.location);
@@ -28,6 +29,9 @@ function router() {
                     afficherPageAccueil();
                 }
             }
+            break;
+        case "favoris":
+            afficherFavorisChasseurs();
             break;
         default:
             afficherPageAccueil();

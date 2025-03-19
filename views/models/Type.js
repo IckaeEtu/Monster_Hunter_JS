@@ -1,5 +1,5 @@
 //Classe représentant un type de monstre
-class Type{
+class TypeMonstre{
     /**
      * @param {number} id - L'Id du monstre
      * @param {string} nom - Le nom du type
@@ -26,4 +26,4 @@ class Type{
     }
 }
 
-export default Type;
+export default TypeMonstre;

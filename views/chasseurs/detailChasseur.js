@@ -1,13 +1,19 @@
-import { getChasseurs } from "../../provider.js";
+// views/chasseurs/detailChasseur.js
+
+import { getChasseurs, getMonstres, getArmes, getMonstre } from "../../provider.js";
 import Chasseur from "../models/Chasseur.js";
-import { ajouterFavoris } from views;
+import Arme from "../models/Arme.js";
+import Type from "../models/Type.js";
+import { ajouterObjet } from "../../utils/inventaire.js";
+import { ajouterFavoriChasseur, supprimerFavoriChasseur, estFavoriChasseur } from '/utils/favorisChasseurs.js';
 
 export async function afficherDetailChasseur(idChasseur) {
-    console.log("Affichage de la liste des chasseurs")
+    console.log("Affichage de la liste des chasseurs");
+
     const chasseurMap = await getChasseurs();
     console.log(chasseurMap);
-    console.log(chasseurMap instanceof Map)
-    content = document.getElementById("content");
+    console.log(chasseurMap instanceof Map);
+    let content = document.getElementById("content");
 
     if (!content) {
         console.error("L'élément 'content' n'a pas été trouvé.");
@@ -21,50 +27,153 @@ export async function afficherDetailChasseur(idChasseur) {
     if (chasseur) {
         document.getElementById("titrePage").innerText = chasseur.getNom();
 
-        let chasseurUl = document.createElement("ul");
+        const chasseurDetails = document.createElement("div");
+        chasseurDetails.classList.add("chasseur-details");
 
-        let rangChasseur = document.createElement("li");
-        rangChasseur.innerText = `Rang de Chasseur : ${chasseur.getRang()}`;
-        chasseurUl.appendChild(rangChasseur);
+        // Carte pour les informations générales
+        const infoCard = document.createElement("div");
+        infoCard.classList.add("info-card");
+        infoCard.innerHTML = `
+                <h2>Informations Générales</h2>
+                <p><strong>Rang de Chasseur :</strong> ${chasseur.getRang()}</p>
+                <p><strong>Spécialisation :</strong> ${chasseur.getSpecialisation()}</p>
+                <p><strong>Notation :</strong> ${chasseur.getNotes()}</p>
+            `;
+        chasseurDetails.appendChild(infoCard);
 
-        let speChasseur = document.createElement("li");
-        speChasseur.innerText = `Spécialisation : ${chasseur.getSpecialisation()}`;
-        chasseurUl.appendChild(speChasseur);
+        // Carte pour l'équipement
+        const equipementCard = document.createElement("div");
+        equipementCard.classList.add("equipement-card");
+        equipementCard.innerHTML = `
+                <h2>Équipement</h2>
+                <p><strong>Arme équipée :</strong> ${chasseur.getArmeEquipee().getNom()}</p>
+                <p><strong>Armure équipée :</strong> ${chasseur.getArmureEquipee().getNom()}</p>
+            `;
+        chasseurDetails.appendChild(equipementCard);
 
-        // Gestion affichage arme
-        let armeChasseur = document.createElement("li");
-        armeChasseur.innerText = `Arme équipée : ${chasseur.getArmeEquipee().getNom()}`;
-        chasseurUl.appendChild(armeChasseur);
-
-        let armureChasseur = document.createElement("li");
-        armureChasseur.innerText = `Armure équipée : ${chasseur.getArmureEquipee().getNom()}`
-        chasseurUl.appendChild(armureChasseur);
-
-        // Gestion affichage monstres favoris
-        let monstresFav = document.createElement("li");
-        monstresFav.innerText = "Monstres favoris :";
-        let ulMonstres = document.createElement("ul");
-
-        // Pour chaque monstre favori, on ajoute un élément de liste
-        chasseur.getMonstresFavoris().forEach(monstre => {
-            let monstreLi = document.createElement("li");
-            monstreLi.innerText = monstre.getNom();
-            ulMonstres.appendChild(monstreLi);
-        });
-
-        monstresFav.appendChild(ulMonstres);
-        chasseurUl.appendChild(monstresFav);
-
-
-        let note = document.createElement("li");
-        note.innerText = `Notation : ${chasseur.getNotes()}`;
-        chasseurUl.appendChild(note);
+        // Carte pour les monstres favoris
+        const monstresCard = document.createElement("div");
+        monstresCard.classList.add("monstres-card");
+        monstresCard.innerHTML = `
+                <h2>Monstres Favoris</h2>
+                <div id="monstres-favoris-container"></div>
+            `;
+        chasseurDetails.appendChild(monstresCard);
 
         content.innerHTML = "";
-        content.appendChild(chasseurUl);
+        content.appendChild(chasseurDetails);
 
+        // Affichage des monstres favoris
+        const monstresFavorisContainer = document.getElementById("monstres-favoris-container");
+        chasseur.getMonstresFavoris().forEach(monstre => {
+            const monstreCard = document.createElement("div");
+            monstreCard.classList.add("monstre-card");
+            let types = monstre.getType();
+            monstreCard.innerHTML = `
+                    <h3>${monstre.getNom()}</h3>
+                    <img src="" alt="image_${monstre.getNom()}" />
+                    <p><strong>Types :</strong> ${types.map(type => type.getNom()).join(", ")}</p>
+                `;
+            const chasserButton = document.createElement('button');
+            chasserButton.innerText = 'Chasser';
+            chasserButton.addEventListener('click', () => {
+                const materiauxObtenus = genererMateriauxAleatoires(monstre);
+                materiauxObtenus.forEach(objet => {
+                    ajouterObjet(objet.id, objet.quantite);
+                });
+                // afficherDetailChasseur(idChasseur); // Recharger la vue
+            })
+
+            monstreCard.appendChild(chasserButton);
+            monstresFavorisContainer.appendChild(monstreCard);
+        });
+
+        // Gestion du bouton favori
+        const boutonFavori = document.createElement('button');
+        boutonFavori.textContent = estFavoriChasseur(chasseur.getId()) ? 'Supprimer des favoris' : 'Ajouter aux favoris';
+
+        boutonFavori.addEventListener('click', () => {
+            toggleFavori(chasseur.getId(), boutonFavori);
+        });
+
+        content.appendChild(boutonFavori);
+
+        // Bouton pour afficher le formulaire de modification
+        const boutonModifierChasseur = document.createElement("button");
+        boutonModifierChasseur.textContent = "Modifier le Chasseur";
+        boutonModifierChasseur.addEventListener("click", () => {
+            afficherFormulaireModificationChasseur(idChasseur);
+        });
+        content.appendChild(boutonModifierChasseur);
     }
-
 }
 
+function toggleFavori(idChasseur, bouton) {
+    if (estFavoriChasseur(idChasseur)) {
+        supprimerFavoriChasseur(idChasseur);
+        bouton.textContent = 'Ajouter aux favoris';
+    } else {
+        ajouterFavoriChasseur(idChasseur);
+        bouton.textContent = 'Supprimer des favoris';
+    }
+}
 
+function genererMateriauxAleatoires(monstre) {
+    const materiaux = monstre.getMateriaux();
+    const materiauxObtenus = [];
+    materiaux.forEach(nomMateriaux => {
+        const qte = Math.floor(Math.random() * 3);
+        materiauxObtenus.push({ nom: nomMateriaux, qte });
+    });
+    return materiauxObtenus;
+}
+
+async function afficherFormulaireModificationChasseur(idChasseur) {
+    const chasseurMap = await getChasseurs();
+    const chasseur = chasseurMap.get(idChasseur);
+    const content = document.getElementById("content");
+
+    if (chasseur && content) {
+        content.innerHTML = ""; // Efface le contenu existant
+
+        const modifierChasseurForm = document.createElement("form");
+        modifierChasseurForm.innerHTML = `
+            <h2>Modifier le Chasseur</h2>
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" value="${chasseur.getNom()}"><br><br>
+
+            <label for="rang">Rang :</label>
+            <input type="text" id="rang" name="rang" value="${chasseur.getRang()}"><br><br>
+
+            <label for="specialisation">Spécialisation :</label>
+            <input type="text" id="specialisation" name="specialisation" value="${chasseur.getSpecialisation()}"><br><br>
+
+            <label for="notes">Notes :</label>
+            <textarea id="notes" name="notes">${chasseur.getNotes()}</textarea><br><br>
+
+            <button type="submit">Enregistrer les modifications</button>
+        `;
+
+        modifierChasseurForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const nom = document.getElementById("nom").value;
+            const rang = document.getElementById("rang").value;
+            const specialisation = document.getElementById("specialisation").value;
+            const notes = document.getElementById("notes").value;
+
+            chasseur.setNom(nom);
+            chasseur.setRang(rang);
+            chasseur.setSpecialisation(specialisation);
+            chasseur.setNotes(notes);
+
+            chasseurMap.set(idChasseur, chasseur);
+
+            localStorage.setItem("chasseurs", JSON.stringify(Array.from(chasseurMap.entries())));
+
+            afficherDetailChasseur(idChasseur); // Recharger la vue des détails
+        });
+
+        content.appendChild(modifierChasseurForm);
+    }
+}

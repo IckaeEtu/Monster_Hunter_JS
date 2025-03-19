@@ -27,6 +27,9 @@ class Monstre {
         return this.nom;
     }
 
+    /**
+     * @returns {Type} le type de monstre
+     */
     getType(){
         return this.type;
     }
