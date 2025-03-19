@@ -1,6 +1,6 @@
 // views/chasseurs/detailChasseur.js
 
-import { getChasseurs, getMonstres, getArmes } from "../../provider.js";
+import { getChasseurs, getMonstres, getArmes, getMonstre } from "../../provider.js";
 import Chasseur from "../models/Chasseur.js";
 import Arme from "../models/Arme.js";
 import Type from "../models/Type.js";
@@ -74,6 +74,17 @@ export async function afficherDetailChasseur(idChasseur) {
                 <img src="" alt="image_${monstre.getNom()}" />
                 <p><strong>Types :</strong> ${types.map(type => type.getNom()).join(", ")}</p>
             `;
+            const chasserButton = document.createElement('button');
+            chasserButton.innerText = 'Chasser';
+            chasserButton.addEventListener('click', () => {
+                const materiauxObtenus = genererMateriauxAleatoires(monstre);
+                materiauxObtenus.forEach(objet => {
+                    ajouterObjet(objet.id, objet.quantite);
+                });
+                // afficherDetailChasseur(idChasseur); // Recharger la vue
+            })
+
+            monstreCard.appendChild(chasserButton);
             monstresFavorisContainer.appendChild(monstreCard);
         });
 
@@ -106,6 +117,5 @@ function genererMateriauxAleatoires(monstre) {
         const qte = Math.floor(Math.random() * 3);
         materiauxObtenus.push({ nom: nomMateriaux, qte });
     });
-    console.log(materiauxObtenus);
     return materiauxObtenus;
 }
