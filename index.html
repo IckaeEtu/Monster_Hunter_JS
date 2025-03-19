@@ -1,19 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Monster Hunter JS</title>
-        <script type="module" src="routeur.js"></script>
-        <link rel="stylesheet" href="style/style.css">
-    </head>
-    <body>
+<head>
+    <title>Monster Hunter JS</title>
+    <script type="module" src="routeur.js"></script>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header>
         <nav>
-            <a href="#/">Accueil</a>
-            <a href="#/chasseurs">Liste des chasseurs</a>
-            <a href="#/favoris">Vos chasseurs favoris</a>
+            <div class="logo">
+                <img src="style/images/logo_mh.png" alt="Logo Monster Hunter">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#/">Accueil</a></li>
+                <li><a href="#/chasseurs">Liste des chasseurs</a></li>
+                <li><a href="#/favoris">Vos chasseurs favoris</a></li>
+            </ul>
         </nav>
-        <h1 id="titrePage">Monster Hunter JS</h1>
-        <main id="content">
-
-        </main>
-    </body>
+    </header>
+    <h1 id="titrePage">Monster Hunter JS</h1>
+    <main id="content">
+        <section id="accueil">
+            <h1>Bienvenue dans Monster Hunter JS</h1>
+            <p>Découvrez l'univers passionnant de Monster Hunter...</p>
+            <div id="fonctionnalites">
+                <h2>Fonctionnalités</h2>
+                <ul>
+                    <li>Liste des chasseurs</li>
+                    <li>Vos chasseurs favoris</li>
+                    <li>...</li>
+                </ul>
+            </div>
+            <div id="actualites">
+                <h2>Dernières actualités</h2>
+                <p>Nouvelle mise à jour : ...</p>
+                <p>Événement spécial : ...</p>
+            </div>
+        </section>
+    </main>
+</body>
 </html>
