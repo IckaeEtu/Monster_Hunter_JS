@@ -335,3 +335,8 @@ export async function getAllTypesMonstre() {
         return new Map();
     }
 }
+
+export async function getCoffre() {
+    const coffre = JSON.parse(localStorage.getItem("mh_inventaire")) || [];
+    return coffre;
+}

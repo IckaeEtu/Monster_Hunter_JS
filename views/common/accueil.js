@@ -11,8 +11,9 @@ export function afficherPageAccueil() {
                 <h2>Fonctionnalités</h2>
                 <ul>
                     <li>Liste des chasseurs</li>
+                    <li>Chasser des monstres</li>
                     <li>Vos chasseurs favoris</li>
-                    <li>...</li>
+                    <li>Coffre de matériaux</li>
                 </ul>
             </div>
             <div id="actualites">

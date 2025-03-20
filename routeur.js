@@ -6,6 +6,8 @@ import { afficherDetailChasseur } from "./views/chasseurs/detailChasseur.js";
 import { afficherListeChasseurs } from "./views/chasseurs/listeChasseurs.js";
 import { afficherPageAccueil } from "./views/common/accueil.js";
 import { afficherFavorisChasseurs } from "./views/favoris/afficherFavoris.js";
+import { afficherCoffre } from "./views/coffres/coffres.js";
+import { afficherArmures } from "./views/armures/armures.js";
 
 function router() {
     console.log(window.location);
@@ -32,6 +34,12 @@ function router() {
             break;
         case "favoris":
             afficherFavorisChasseurs();
+            break;
+        case "coffres":
+            afficherCoffre();
+            break;
+        case "armures":
+            afficherArmures();
             break;
         default:
             afficherPageAccueil();

@@ -29,5 +29,3 @@ export async function afficherFavorisChasseurs() {
 
     content.appendChild(chasseurUl);
 }
-
-afficherFavorisChasseurs();

@@ -6,6 +6,7 @@ import Arme from "../models/Arme.js";
 import Type from "../models/Type.js";
 import { ajouterObjet } from "../../utils/inventaire.js";
 import { ajouterFavoriChasseur, supprimerFavoriChasseur, estFavoriChasseur } from '/utils/favorisChasseurs.js';
+import { afficherPopup } from '/views/common/popup.js';
 
 export async function afficherDetailChasseur(idChasseur) {
     console.log("Affichage de la liste des chasseurs");
@@ -78,8 +79,11 @@ export async function afficherDetailChasseur(idChasseur) {
             chasserButton.innerText = 'Chasser';
             chasserButton.addEventListener('click', () => {
                 const materiauxObtenus = genererMateriauxAleatoires(monstre);
+
+                console.log(materiauxObtenus);
                 materiauxObtenus.forEach(objet => {
-                    ajouterObjet(objet.id, objet.quantite);
+                    console.log(objet);
+                    ajouterObjet(objet.nom, objet.quantite);
                 });
                 // afficherDetailChasseur(idChasseur); // Recharger la vue
             })
@@ -125,6 +129,7 @@ function genererMateriauxAleatoires(monstre) {
         const qte = Math.floor(Math.random() * 3);
         materiauxObtenus.push({ nom: nomMateriaux, qte });
     });
+    afficherPopup(`Chasse réussie ! Loot récupéré : ${materiauxObtenus.map(objet => `${objet.nom} x${objet.qte}`).join(', ')}`);
     return materiauxObtenus;
 }
 
