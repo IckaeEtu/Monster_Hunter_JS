@@ -4,7 +4,6 @@ body {
     font-family: 'Papyrus', fantasy; /* Police médiévale */
     margin: 0;
     padding: 0;
-    background-image: url('style/images/parchemin.jpg'); /* Fond parchemin */
     background-size: cover;
     color: #553300; /* Couleur texte médiévale */
 }
@@ -25,7 +24,7 @@ nav {
 }
 
 .logo img {
-    height: 80px; /* Logo plus grand */
+    height: 80px;
 }
 
 .nav-links {
@@ -61,9 +60,14 @@ nav {
     max-width: 1200px;
     margin: 30px auto;
     padding: 30px;
-    background-color: rgba(255, 250, 240, 0.8); /* Fond parchemin clair */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre boîte */
     border-radius: 10px;
+}
+
+.chasseur-image {
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: contain;
 }
 
 /* Style de détail chasseur */

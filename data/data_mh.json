@@ -37,6 +37,70 @@
             ],
             "notes": 5,
             "setArmureEquipee": 3
+        },{
+            "id": 4,
+            "nom": "Zara",
+            "rang_de_chasseur": 67,
+            "specialisation": "Maître d'armes",
+            "armeEquipee": 4,
+            "monstresFavoris": [
+                5,
+                6
+            ],
+            "notes": 4.7,
+            "setArmureEquipee": 5
+        },
+        {
+            "id": 5,
+            "nom": "Kenji",
+            "rang_de_chasseur": 92,
+            "specialisation": "Artilleur",
+            "armeEquipee": 5,
+            "monstresFavoris": [
+                7,
+                8
+            ],
+            "notes": 4.9,
+            "setArmureEquipee": 6
+        },
+        {
+            "id": 6,
+            "nom": "Sasha",
+            "rang_de_chasseur": 23,
+            "specialisation": "Maître d'armes",
+            "armeEquipee": 6,
+            "monstresFavoris": [
+                9,
+                10
+            ],
+            "notes": 4.6,
+            "setArmureEquipee": 7
+        },
+                {
+            "id": 7,
+            "nom": "Drake",
+            "rang_de_chasseur": 78,
+            "specialisation": "Épéiste",
+            "armeEquipee": 7,
+            "monstresFavoris": [
+                11,
+                12
+            ],
+            "notes": 4.8,
+            "setArmureEquipee": 8
+        },
+        {
+            "id": 8,
+            "nom": "Rina",
+            "rang_de_chasseur": 55,
+            "specialisation": "Artilleur",
+            "armeEquipee": 8,
+            "monstresFavoris": [
+                13,
+                14
+            ],
+            "notes": 4.5,
+            "setArmureEquipee": 1
         }
     ],
     "armes": [
@@ -60,6 +124,41 @@
             "type": "Epée longue",
             "attaque": 180,
             "element": "Dragon"
+        },
+        {
+            "id": 4,
+            "nom": "Marteau de guerre",
+            "type": "Marteau",
+            "attaque": 150,
+            "element": "Explosion"
+        },
+        {
+            "id": 5,
+            "nom": "Fusarbalète lourde X",
+            "type": "Fusarbalète lourde",
+            "attaque": 110,
+            "element": null
+        },
+        {
+            "id": 6,
+            "nom": "Volto-hache royale",
+            "type": "Volto-hache",
+            "attaque": 160,
+            "element": "Foudre"
+        },
+        {
+            "id": 7,
+            "nom": "Lame démoniaque",
+            "type": "Double lames",
+            "attaque": 140,
+            "element": "Dragon"
+        },
+        {
+            "id": 8,
+            "nom": "Cor de chasse mélodique",
+            "type": "Cor de chasse",
+            "attaque": 130,
+            "element": "Glace"
         }
     ],
     "monstres": [

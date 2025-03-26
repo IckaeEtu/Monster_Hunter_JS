@@ -85,7 +85,6 @@ export async function afficherDetailChasseur(idChasseur) {
                     console.log(objet);
                     ajouterObjet(objet.nom, objet.quantite);
                 });
-                // afficherDetailChasseur(idChasseur); // Recharger la vue
             })
 
             monstreCard.appendChild(chasserButton);
