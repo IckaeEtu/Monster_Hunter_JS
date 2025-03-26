@@ -1,5 +1,5 @@
 //Classe représentant un set d'amure
-class Arumre{
+class Armure{
     /**
      * @param {number} id - L'ID de l'armure
      * @param {string} nom - Le nom de l'armure
@@ -56,4 +56,4 @@ class Arumre{
     }
 }
 
-export default Arumre;
+export default Armure;
