@@ -12,7 +12,7 @@ export async function afficherListeChasseurs() {
     }
 
     document.getElementById('titrePage').innerText = "Liste des chasseurs";
-    content.innerHTML = ""; // Efface le contenu existant
+    content.innerHTML = "";
 
     const listeChasseursDiv = document.createElement("div");
     listeChasseursDiv.id = "liste-chasseurs";
