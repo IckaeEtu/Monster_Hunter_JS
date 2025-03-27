@@ -289,7 +289,7 @@ export async function getArmures() {
         }
 
         const armuresData = await response.json();
-        let res = new Map();
+        let armures = [];
 
         for (const armureData of armuresData) {
             let armure = new Armure(
@@ -300,13 +300,13 @@ export async function getArmures() {
                 armureData.bonus
             );
 
-            res.set(armure.getId(), armure);
+            armures.push(armure);
         }
 
-        return res;
+        return armures; 
     } catch (error) {
         console.error("Erreur lors de la récupération des armures : ", error);
-        return new Map();
+        return []; 
     }
 }
 
@@ -337,6 +337,6 @@ export async function getAllTypesMonstre() {
 }
 
 export async function getCoffre() {
-    const coffre = JSON.parse(localStorage.getItem("mh_inventaire")) || [];
+    const coffre = JSON.parse(localStorage.getItem("mh_inventaire_composants")) || [];
     return coffre;
 }

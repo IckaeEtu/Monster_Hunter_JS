@@ -5,13 +5,13 @@ body {
     margin: 0;
     padding: 0;
     background-size: cover;
-    color: #553300; /* Couleur texte médiévale */
+    color: #553300;
 }
 
 header {
-    background-color: rgba(100, 50, 20, 0.8); /* Fond bois sombre */
+    background-color: rgba(100, 50, 20, 0.8);
     padding: 20px 0;
-    border-bottom: 2px solid #886633; /* Bordure bois */
+    border-bottom: 2px solid #886633; 
 }
 
 nav {
@@ -40,27 +40,27 @@ nav {
     color: antiquewhite; 
     text-decoration: none;
     padding: 10px 15px;
-    border: 2px solid #886633; /* Bordure bois */
+    border: 2px solid #886633;
     border-radius: 8px;
     transition: background-color 0.3s ease;
 }
 
 .nav-links a:hover {
-    background-color: rgba(150, 100, 50, 0.5); /* Survol bois */
+    background-color: rgba(150, 100, 50, 0.5); 
 }
 
 #titrePage {
     text-align: center;
     margin-top: 30px;
-    color: #886633; /* Couleur titre médiévale */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre titre */
+    color: #886633;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 #content {
     max-width: 1200px;
     margin: 30px auto;
     padding: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre boîte */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
 }
 
@@ -139,5 +139,34 @@ nav {
     max-height: 50px;
     vertical-align: middle;
     margin-right: 10px;
+}
+
+=======
+/* Armures */
+.armure-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.armure-card h3 {
+    margin-top: 0;
+    color: #886633;
+}
+
+.armure-card p {
+    margin-bottom: 10px;
+}
+
+.armure-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.armure-card li {
+    margin-bottom: 5px;
 }
 

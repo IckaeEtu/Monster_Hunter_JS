@@ -176,8 +176,11 @@
                 "Glace"
             ],
             "materiaux": [
-                "Écaille de Rathalos",
-                "Griffe de Rathalos"
+                "Écailles de Rathalos",
+                "Griffes de Rathalos",
+                "Ailes de Rathalos",
+                "Queue de Rathalos",
+                "Rubis de Rathalos"
             ],
             "notes": 4.2
         },
@@ -196,7 +199,10 @@
             ],
             "materiaux": [
                 "Peau de Khezu",
-                "Cerveau de Khezu"
+                "Cerveau de Khezu",
+                "Queue de Khezu",
+                "Os de Khezu",
+                "Ampoule pâle"
             ],
             "notes": 4.8
         },
@@ -215,7 +221,10 @@
             ],
             "materiaux": [
                 "Griffes de Tigrex",
-                "Peau de Tigrex"
+                "Peau de Tigrex",
+                "Queue de Tigrex",
+                "Mâchoire de Tigrex",
+                "Écaille de Tigrex"
             ],
             "notes": 4.9
         },
@@ -234,7 +243,10 @@
             ],
             "materiaux": [
                 "Écaille de Zinogre",
-                "Corne de Zinogre"
+                "Corne de Zinogre",
+                "Queue de Zinogre",
+                "Griffe de Zinogre",
+                "Gemme de Zinogre"
             ],
             "notes": 4.9
         },
@@ -253,7 +265,10 @@
             ],
             "materiaux": [
                 "Peau de Brachydios",
-                "Sphères de Brachydios"
+                "Sphères de Brachydios",
+                "Queue de Brachydios",
+                "Masse de Brachydios",
+                "Fluide explosif"
             ],
             "notes": 4.5
         },
@@ -272,7 +287,10 @@
             ],
             "materiaux": [
                 "Ailes de Nargacuga",
-                "Griffes de Nargacuga"
+                "Griffes de Nargacuga",
+                "Queue de Nargacuga",
+                "Écaille de Nargacuga",
+                "Médulle de Nargacuga"
             ],
             "notes": 4.6
         },
@@ -291,7 +309,10 @@
             ],
             "materiaux": [
                 "Écailles de Zorah Magdaros",
-                "Flammes de Zorah Magdaros"
+                "Flammes de Zorah Magdaros",
+                "Magma de Zorah Magdaros",
+                "Carapace de Zorah Magdaros",
+                "Coeur de Zorah Magdaros"
             ],
             "notes": 4.7
         },
@@ -310,7 +331,10 @@
             ],
             "materiaux": [
                 "Ailes de Legiana",
-                "Peau de Legiana"
+                "Peau de Legiana",
+                "Queue de Legiana",
+                "Griffe de Legiana",
+                "Cristal de Legiana"
             ],
             "notes": 4.4
         },
@@ -329,7 +353,10 @@
             ],
             "materiaux": [
                 "Cornes de Diablos",
-                "Peau de Diablos"
+                "Peau de Diablos",
+                "Queue de Diablos",
+                "Carapace de Diablos",
+                "Écaille de Diablos"
             ],
             "notes": 4.8
         },
@@ -348,7 +375,10 @@
             ],
             "materiaux": [
                 "Cornes de Nergigante",
-                "Regeneration de Nergigante"
+                "Regeneration de Nergigante",
+                "Écaille de Nergigante",
+                "Queue de Nergigante",
+                "Griffe de Nergigante"
             ],
             "notes": 4.9
         },
@@ -367,7 +397,10 @@
             ],
             "materiaux": [
                 "Écailles de Lunastra",
-                "Flammes de Lunastra"
+                "Flammes de Lunastra",
+                "Crinière de Lunastra",
+                "Queue de Lunastra",
+                "Gemme de Lunastra"
             ],
             "notes": 4.8
         },
@@ -386,7 +419,10 @@
             ],
             "materiaux": [
                 "Peau de Vaal Hazak",
-                "Crocs de Vaal Hazak"
+                "Crocs de Vaal Hazak",
+                "Queue de Vaal Hazak",
+                "Griffe de Vaal Hazak",
+                "Membrane de Vaal Hazak"
             ],
             "notes": 4.6
         },
@@ -405,9 +441,34 @@
             ],
             "materiaux": [
                 "Écailles de Kushala Daora",
-                "Griffes de Kushala Daora"
+                "Griffes de Kushala Daora",
+                "Queue de Kushala Daora",
+                "Corne de Kushala Daora",
+                "Gemme de Kushala Daora"
             ],
             "notes": 4.5
+        },
+        {
+            "id": 14,
+            "nom": "Teostra",
+            "type_id": [
+                12
+            ],
+            "environnement_id": [
+                1
+            ],
+            "faiblesses": [
+                "Eau",
+                "Glace"
+            ],
+            "materiaux": [
+                "Flammes de Teostra",
+                "Écailles de Teostra",
+                "Crinière de Teostra",
+                "Queue de Teostra",
+                "Gemme de Teostra"
+            ],
+            "notes": 4.7
         },
         {
             "id": 14,
@@ -588,15 +649,15 @@
             "monstre_id": 1,
             "composants": [
                 {
-                    "partie": "Queue",
+                    "partie": "Queue de Rathalos",
                     "quantité": 2
                 },
                 {
-                    "partie": "Ailes",
+                    "partie": "Ailes de Rathalos",
                     "quantité": 3
                 },
                 {
-                    "partie": "Écailles",
+                    "partie": "Écailles de Rathalos",
                     "quantité": 5
                 }
             ],
@@ -608,15 +669,15 @@
             "monstre_id": 2,
             "composants": [
                 {
-                    "partie": "Peau",
+                    "partie": "Peau de Khezu",
                     "quantité": 6
                 },
                 {
-                    "partie": "Cerveau",
+                    "partie": "Cerveau de Khezu",
                     "quantité": 2
                 },
                 {
-                    "partie": "Os",
+                    "partie": "Os de Khezu",
                     "quantité": 4
                 }
             ],
@@ -628,15 +689,15 @@
             "monstre_id": 3,
             "composants": [
                 {
-                    "partie": "Griffes",
+                    "partie": "Griffes de Tigrex",
                     "quantité": 4
                 },
                 {
-                    "partie": "Queue",
+                    "partie": "Queue de Tigrex",
                     "quantité": 3
                 },
                 {
-                    "partie": "Peau",
+                    "partie": "Peau de Tigrex",
                     "quantité": 5
                 }
             ],
@@ -648,15 +709,15 @@
             "monstre_id": 4,
             "composants": [
                 {
-                    "partie": "Écailles",
+                    "partie": "Écailles de Zinogre",
                     "quantité": 4
                 },
                 {
-                    "partie": "Ailes",
+                    "partie": "Ailes de Zinogre",
                     "quantité": 3
                 },
                 {
-                    "partie": "Queue",
+                    "partie": "Queue de Zinogre",
                     "quantité": 2
                 }
             ],
@@ -668,15 +729,15 @@
             "monstre_id": 5,
             "composants": [
                 {
-                    "partie": "Peau",
+                    "partie": "Peau de Brachydios",
                     "quantité": 5
                 },
                 {
-                    "partie": "Queue",
+                    "partie": "Queue de Brachydios",
                     "quantité": 3
                 },
                 {
-                    "partie": "Sphères",
+                    "partie": "Sphères de Brachydios",
                     "quantité": 4
                 }
             ],
@@ -688,15 +749,15 @@
             "monstre_id": 6,
             "composants": [
                 {
-                    "partie": "Ailes",
+                    "partie": "Ailes de Nargacuga",
                     "quantité": 4
                 },
                 {
-                    "partie": "Queue",
+                    "partie": "Queue de Nargacuga",
                     "quantité": 2
                 },
                 {
-                    "partie": "Griffes",
+                    "partie": "Griffes de Nargacuga",
                     "quantité": 5
                 }
             ],
@@ -708,15 +769,15 @@
             "monstre_id": 9,
             "composants": [
                 {
-                    "partie": "Corne",
+                    "partie": "Corne de Diablos",
                     "quantité": 5
                 },
                 {
-                    "partie": "Queue",
+                    "partie": "Queue de Diablos",
                     "quantité": 3
                 },
                 {
-                    "partie": "Peau",
+                    "partie": "Peau de Diablos",
                     "quantité": 6
                 }
             ],
@@ -728,15 +789,15 @@
             "monstre_id": 14,
             "composants": [
                 {
-                    "partie": "Flamme",
+                    "partie": "Flammes de Teostra",
                     "quantité": 6
                 },
                 {
-                    "partie": "Queue",
+                    "partie": "Queue de Teostra",
                     "quantité": 3
                 },
                 {
-                    "partie": "Écailles",
+                    "partie": "Écailles de Teostra",
                     "quantité": 5
                 }
             ],
