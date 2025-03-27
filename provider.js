@@ -232,7 +232,7 @@ export async function getEnvironnements() {
         }
 
         const environnementsData = await response.json();
-        let res = new Map();
+        let res = []
 
         for (const environnementData of environnementsData) {
             let environnement = new Environnement(
@@ -242,7 +242,7 @@ export async function getEnvironnements() {
                 environnementData.habitats
             );
 
-            res.set(environnement.getId(), environnement);
+            res.push(environnement);
         }
 
         return res;

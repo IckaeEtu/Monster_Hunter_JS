@@ -8,6 +8,8 @@ import { afficherPageAccueil } from "./views/common/accueil.js";
 import { afficherFavorisChasseurs } from "./views/favoris/afficherFavoris.js";
 import { afficherCoffre } from "./views/coffres/coffres.js";
 import { afficherArmures } from "./views/armures/armures.js";
+import { afficherTerrainDeChasse } from "./views/terraindechasse/terrainDeChasse.js";
+import { afficherMonstresParEnvironnementRoute } from "./views/terraindechasse/terrainDeChasse.js";
 
 function router() {
     console.log(window.location);
@@ -40,6 +42,14 @@ function router() {
             break;
         case "armures":
             afficherArmures();
+            break;
+        case "terrain_de_chasse":
+            if (segments.length === 2) {
+                afficherTerrainDeChasse();
+            } else if (segments.length === 3) {
+                const nomEnvironnement = segments[2];
+                afficherMonstresParEnvironnementRoute(nomEnvironnement);
+            }
             break;
         default:
             afficherPageAccueil();
