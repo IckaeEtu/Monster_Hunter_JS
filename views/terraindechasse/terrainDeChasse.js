@@ -65,7 +65,7 @@ export async function afficherMonstresParEnvironnementRoute(nomEnvironnement) {
 }
 
 function afficherMonstresDeLEnvironnement(environnement, monstres, container) {
-    container.innerHTML = ""; // Efface les précédents éléments
+    container.innerHTML = "";
 
     const titreEnvironnement = document.createElement("h2");
     titreEnvironnement.textContent = `Monstres de ${environnement.getNom()}`;
@@ -108,22 +108,32 @@ function afficherMonstresDeLEnvironnement(environnement, monstres, container) {
     const tbody = document.createElement("tbody");
     monstresDeLEnvironnement.forEach(monstre => {
         const tr = document.createElement("tr");
-
+    
+        // Colonne Icone
+        const tdIcone = document.createElement("td");
+        const imgIcone = document.createElement("img");
+        imgIcone.src = `/data/icons/${monstre.getLienImage()}`;
+        imgIcone.alt = `Icone de ${monstre.getNom()}`;
+        imgIcone.style.maxWidth = '50px'; 
+        imgIcone.style.maxHeight = '50px';
+        tdIcone.appendChild(imgIcone);
+        tr.appendChild(tdIcone);
+    
         // Colonne Nom
         const tdNom = document.createElement("td");
         tdNom.textContent = monstre.getNom();
         tr.appendChild(tdNom);
-
+    
         // Colonne Faiblesses
         const tdFaiblesses = document.createElement("td");
         tdFaiblesses.textContent = monstre.getFaiblesses().join(", ");
         tr.appendChild(tdFaiblesses);
-
+    
         // Colonne Loot possible
         const tdLoot = document.createElement("td");
         tdLoot.textContent = `${monstre.getMateriaux()}`;
         tr.appendChild(tdLoot);
-
+    
         // Colonne Action
         const tdAction = document.createElement("td");
         const chasserButton = document.createElement("button");
@@ -133,11 +143,11 @@ function afficherMonstresDeLEnvironnement(environnement, monstres, container) {
         });
         tdAction.appendChild(chasserButton);
         tr.appendChild(tdAction);
-
+    
         tbody.appendChild(tr);
     });
     table.appendChild(tbody);
-
+    
     container.appendChild(table);
 }
 
@@ -154,7 +164,7 @@ function genererMateriauxAleatoires(monstre) {
     const materiaux = monstre.getMateriaux();
     const materiauxObtenus = [];
     materiaux.forEach(nomMateriaux => {
-        const quantite = Math.floor(Math.random() * 3); // Nombre aléatoire de matériaux
+        const quantite = Math.floor(Math.random() * 3);
         materiauxObtenus.push({ nom: nomMateriaux, quantite });
     });
     return materiauxObtenus;
