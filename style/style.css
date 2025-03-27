@@ -1,7 +1,7 @@
 /* Index */
 
 body {
-    font-family: 'Papyrus', fantasy; /* Police médiévale */
+    font-family: 'Papyrus', fantasy;
     margin: 0;
     padding: 0;
     background-size: cover;
@@ -11,7 +11,7 @@ body {
 header {
     background-color: rgba(100, 50, 20, 0.8);
     padding: 20px 0;
-    border-bottom: 2px solid #886633; 
+    border-bottom: 2px solid #886633;
 }
 
 nav {
@@ -37,7 +37,7 @@ nav {
 }
 
 .nav-links a {
-    color: antiquewhite; 
+    color: antiquewhite;
     text-decoration: none;
     padding: 10px 15px;
     border: 2px solid #886633;
@@ -46,7 +46,7 @@ nav {
 }
 
 .nav-links a:hover {
-    background-color: rgba(150, 100, 50, 0.5); 
+    background-color: rgba(150, 100, 50, 0.5);
 }
 
 #titrePage {
@@ -77,24 +77,26 @@ nav {
     gap: 20px;
 }
 
-.info-card, .equipement-card, .monstres-card {
+.info-card,
+.equipement-card,
+.monstres-card {
     border: 1px solid #ddd;
     padding: 20px;
     border-radius: 5px;
 }
 
-.info-card h2, .equipement-card h2, .monstres-card h2 {
+.info-card h2,
+.equipement-card h2,
+.monstres-card h2 {
     margin-top: 0;
 }
-
 
 .monstre-card img {
     max-width: 100px;
     max-height: 100px;
     object-fit: contain;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
-
 
 /* Coffre */
 
@@ -105,7 +107,7 @@ nav {
 }
 
 .objet-card {
-    width: 100px; /* Ajustez la largeur selon vos besoins */
+    width: 100px;
     padding: 10px;
     margin: 5px;
     border: 1px solid #ccc;
@@ -143,13 +145,12 @@ nav {
 }
 
 .monstre-image {
-    max-width: 50px; /* Ajustez la taille selon vos besoins */
+    max-width: 50px;
     max-height: 50px;
     vertical-align: middle;
     margin-right: 10px;
 }
 
-=======
 /* Armures */
 .armure-card {
     border: 1px solid #ccc;
@@ -178,3 +179,66 @@ nav {
     margin-bottom: 5px;
 }
 
+/* Styles pour la liste des chasseurs */
+#main-container {
+    display: flex; /* Utilisation de flex pour la mise en page principale */
+    justify-content: space-between; /* Espacement entre la grille et la sidebar */
+}
+
+#liste-chasseurs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: calc(100% - 220px); /* Ajuster la largeur pour laisser de la place au conteneur des favoris */
+}
+
+.chasseur-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.chasseur-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.chasseur-lien-details {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.chasseur-lien-details:hover {
+    text-decoration: underline;
+}
+
+/* Styles pour le conteneur des favoris */
+#favoris-container {
+    width: 200px;
+    padding: 15px;
+    border-left: 1px solid #ddd;
+    margin-left: 20px;
+}
+
+#favoris-container h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+#favoris-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+#favoris-container li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#favoris-container li:last-child {
+    border-bottom: none;
+}
