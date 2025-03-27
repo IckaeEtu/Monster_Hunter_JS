@@ -165,6 +165,7 @@
         {
             "id": 1,
             "nom": "Rathalos",
+            "img": "MHW-Rathalos_Icon.png",
             "type_id": [
                 7
             ],
@@ -187,6 +188,7 @@
         {
             "id": 2,
             "nom": "Khezu",
+            "img": "MHW-Rathalos_Icon.png",
             "type_id": [
                 3
             ],
@@ -209,6 +211,7 @@
         {
             "id": 3,
             "nom": "Tigrex",
+            "img": "MHWI-Tigrex_Icon.png",
             "type_id": [
                 6
             ],
@@ -231,6 +234,7 @@
         {
             "id": 4,
             "nom": "Zinogre",
+            "img": "MHWI-Zinogre_Icon.png",
             "type_id": [
                 7
             ],
@@ -253,6 +257,7 @@
         {
             "id": 5,
             "nom": "Brachydios",
+            "img": "MHW-Brachydios_Icon.png",
             "type_id": [
                 2
             ],
@@ -275,6 +280,7 @@
         {
             "id": 6,
             "nom": "Nargacuga",
+            "img": "MHWI-Nargacuga_Icon.png",
             "type_id": [
                 6
             ],
@@ -297,6 +303,7 @@
         {
             "id": 7,
             "nom": "Zorah Magdaros",
+            "img": "MHW-Legiana_Icon.png",
             "type_id": [
                 3
             ],
@@ -319,6 +326,7 @@
         {
             "id": 8,
             "nom": "Legiana",
+            "img": "MHW-Legiana_Icon.png",
             "type_id": [
                 4
             ],
@@ -341,6 +349,7 @@
         {
             "id": 9,
             "nom": "Diablos",
+            "img": "MHW-Diablos_Icon.png",
             "type_id": [
                 10
             ],
@@ -363,6 +372,7 @@
         {
             "id": 10,
             "nom": "Nergigante",
+            "img": "MHW-Nergigante_Icon.png",
             "type_id": [
                 12
             ],
@@ -385,6 +395,7 @@
         {
             "id": 11,
             "nom": "Lunastra",
+            "img": "MHW-Lunastra_Icon.png",
             "type_id": [
                 7
             ],
@@ -407,6 +418,7 @@
         {
             "id": 12,
             "nom": "Vaal Hazak",
+            "img": "MHW-Rathalos_Icon.png",
             "type_id": [
                 3
             ],
@@ -451,6 +463,7 @@
         {
             "id": 14,
             "nom": "Teostra",
+            "img": "MHW-Rathalos_Icon.png",
             "type_id": [
                 12
             ],
@@ -467,25 +480,6 @@
                 "Crinière de Teostra",
                 "Queue de Teostra",
                 "Gemme de Teostra"
-            ],
-            "notes": 4.7
-        },
-        {
-            "id": 14,
-            "nom": "Teostra",
-            "type_id": [
-                12
-            ],
-            "environnement_id": [
-                1
-            ],
-            "faiblesses": [
-                "Eau",
-                "Glace"
-            ],
-            "materiaux": [
-                "Flammes de Teostra",
-                "Écailles de Teostra"
             ],
             "notes": 4.7
         }

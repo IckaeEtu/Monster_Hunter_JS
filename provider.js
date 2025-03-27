@@ -92,7 +92,8 @@ export async function getMonstre(idMonstre) {
             environnements,
             monstreData.faiblesses,
             monstreData.materiaux,
-            monstreData.notes
+            monstreData.notes,
+            monstreData.img
         );
 
         return monstre;
@@ -203,7 +204,6 @@ export async function getMonstres() {
         for (const monstreData of monstresData) {
             const types = await Promise.all(monstreData.type_id.map(typeId => getTypesMonstre(typeId)));
             const environnements = await Promise.all(monstreData.environnement_id.map(environnementId => getEnvironnement(environnementId)));
-
             let monstre = new Monstre(
                 monstreData.id,
                 monstreData.nom,
@@ -211,7 +211,8 @@ export async function getMonstres() {
                 environnements,
                 monstreData.faiblesses,
                 monstreData.materiaux,
-                monstreData.notes
+                monstreData.notes,
+                monstreData.img
             );
 
             res.set(monstre.getId(), monstre);
