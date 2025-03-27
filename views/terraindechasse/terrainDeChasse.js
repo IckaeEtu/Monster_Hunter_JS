@@ -95,7 +95,7 @@ function afficherMonstresDeLEnvironnement(environnement, monstres, container) {
     // Création de l'en-tête du tableau
     const thead = document.createElement("thead");
     const headerRow = document.createElement("tr");
-    const headers = ["Nom", "Faiblesses", "Loot possible", "Action"];
+    const headers = ["Icone","Nom", "Faiblesses", "Loot possible", "Action"];
     headers.forEach(headerText => {
         const th = document.createElement("th");
         th.textContent = headerText;

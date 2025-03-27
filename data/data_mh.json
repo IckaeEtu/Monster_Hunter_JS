@@ -188,7 +188,7 @@
         {
             "id": 2,
             "nom": "Khezu",
-            "img": "MHW-Rathalos_Icon.png",
+            "img": "MHRise-Khezu_Icon.png",
             "type_id": [
                 3
             ],
@@ -257,7 +257,7 @@
         {
             "id": 5,
             "nom": "Brachydios",
-            "img": "MHW-Brachydios_Icon.png",
+            "img": "MHWI-Brachydios_Icon.png",
             "type_id": [
                 2
             ],
