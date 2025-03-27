@@ -10,6 +10,7 @@ import { afficherCoffre } from "./views/coffres/coffres.js";
 import { afficherArmures } from "./views/armures/armures.js";
 import { afficherTerrainDeChasse } from "./views/terraindechasse/terrainDeChasse.js";
 import { afficherMonstresParEnvironnementRoute } from "./views/terraindechasse/terrainDeChasse.js";
+import { afficherFormulaireModificationChasseur } from "./views/chasseurs/modifierChasseur.js";
 
 function router() {
     console.log(window.location);
@@ -21,19 +22,27 @@ function router() {
         case "":
             afficherPageAccueil();
             break;
-        case "chasseurs":
-            if (segments.length === 2) { // Vérifier la longueur
-                afficherListeChasseurs();
-            } else if (segments.length === 3) {
-                const id = String(segments[2]);
-                if (!isNaN(id)) {
-                    afficherDetailChasseur(id);
-                } else {
-                    console.error("ID de chasseur invalide.");
-                    afficherPageAccueil();
+            case "chasseurs":
+                if (segments.length === 2) {
+                    afficherListeChasseurs();
+                } else if (segments.length === 3) {
+                    const id = String(segments[2]);
+                    if (!isNaN(id)) {
+                        afficherDetailChasseur(id);
+                    } else {
+                        console.error("ID de chasseur invalide.");
+                        afficherPageAccueil();
+                    }
+                } else if (segments.length === 4 && segments[3] === "modifier") { 
+                    const id = String(segments[2]);
+                    if (!isNaN(id)) {
+                        afficherFormulaireModificationChasseur(id);
+                    } else {
+                        console.error("ID de chasseur invalide.");
+                        afficherPageAccueil();
+                    }
                 }
-            }
-            break;
+                break;
         case "favoris":
             afficherFavorisChasseurs();
             break;

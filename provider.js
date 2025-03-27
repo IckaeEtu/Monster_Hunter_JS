@@ -304,10 +304,10 @@ export async function getArmures() {
             armures.push(armure);
         }
 
-        return armures; 
+        return armures;
     } catch (error) {
         console.error("Erreur lors de la récupération des armures : ", error);
-        return []; 
+        return [];
     }
 }
 
@@ -340,4 +340,25 @@ export async function getAllTypesMonstre() {
 export async function getCoffre() {
     const coffre = JSON.parse(localStorage.getItem("mh_inventaire_composants")) || [];
     return coffre;
+}
+
+export async function updateChasseur(chasseur) {
+    try {
+        const response = await fetch(`${config.apiUrl}/chasseurs/${chasseur.getId()}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(chasseur)
+        });
+
+        if (!response.ok) {
+            throw new Error(`Erreur HTTP, status: ${response.status}`);
+        }
+
+        return true;
+    } catch (error) {
+        console.error("Erreur lors de la mise à jour du chasseur : ", error);
+        return false;
+    }
 }

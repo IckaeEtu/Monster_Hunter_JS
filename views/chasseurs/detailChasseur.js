@@ -101,11 +101,10 @@ export async function afficherDetailChasseur(idChasseur) {
 
         content.appendChild(boutonFavori);
 
-        // Bouton pour afficher le formulaire de modification
         const boutonModifierChasseur = document.createElement("button");
         boutonModifierChasseur.textContent = "Modifier le Chasseur";
         boutonModifierChasseur.addEventListener("click", () => {
-            afficherFormulaireModificationChasseur(idChasseur);
+            window.location.hash = `/chasseurs/${idChasseur}/modifier`;
         });
         content.appendChild(boutonModifierChasseur);
     }
