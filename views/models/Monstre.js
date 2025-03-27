@@ -8,8 +8,9 @@ class Monstre {
      * @param {string[]} faiblesses - Liste des faiblesses du monstre 
      * @param {string[]} materiaux - Liste des matériaux que l'on peut obtenir en tuant le monstre
      * @param {number} notes - Note du monstre 
+     * @param {string} lienImage - Lien de l'image du monstre
      */
-    constructor(id, nom, type, environnement, faiblesses, materiaux, notes) {
+    constructor(id, nom, type, environnement, faiblesses, materiaux, notes, lienImage) {
             this.id = id;
             this.nom = nom;
             this.type = type;
@@ -17,6 +18,7 @@ class Monstre {
             this.faiblesses = faiblesses;
             this.materiaux = materiaux;
             this.notes = notes;
+            this.lienImage = lienImage;
         }
     
     getId(){
@@ -48,6 +50,14 @@ class Monstre {
 
     getNotes(){
         return this.notes;
+    }
+
+    getLienImage() {
+        return this.lienImage;
+    }
+
+    setLienImage(lienImage) {
+        this.lienImage = lienImage;
     }
 
     setId(id){

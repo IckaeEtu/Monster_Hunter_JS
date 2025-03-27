@@ -72,7 +72,7 @@ export async function afficherDetailChasseur(idChasseur) {
             let types = monstre.getType();
             monstreCard.innerHTML = `
                     <h3>${monstre.getNom()}</h3>
-                    <img src="" alt="image_${monstre.getNom()}" />
+                    <img src="/data/icons/${monstre.getLienImage()}" alt="image_${monstre.getNom()}" />
                     <p><strong>Types :</strong> ${types.map(type => type.getNom()).join(", ")}</p>
                 `;
             const chasserButton = document.createElement('button');
