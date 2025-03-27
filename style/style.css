@@ -110,6 +110,38 @@ nav {
     margin: 0;
 }
 
+/* Monstre */
+
+.monstre-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.monstre-table th,
+.monstre-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.monstre-table th {
+    background-color: #f2f2f2;
+}
+
+.monstre-table button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.monstre-image {
+    max-width: 50px; /* Ajustez la taille selon vos besoins */
+    max-height: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+=======
 /* Armures */
 .armure-card {
     border: 1px solid #ccc;
@@ -137,3 +169,4 @@ nav {
 .armure-card li {
     margin-bottom: 5px;
 }
+

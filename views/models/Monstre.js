@@ -39,7 +39,7 @@ class Monstre {
     }
 
     getFaiblesses(){
-        return this.environnement;
+        return this.faiblesses;
     }
     
     getMateriaux(){
