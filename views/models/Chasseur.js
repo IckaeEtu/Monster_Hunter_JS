@@ -83,7 +83,7 @@ class Chasseur {
         this.notes = notes;
     }
 
-    setArmureEquipee(setArmureEquipee) {
+    setArmure(setArmureEquipee) {
         this.setArmureEquipee = setArmureEquipee;
     }
 }

@@ -343,13 +343,28 @@ export async function getCoffre() {
 }
 
 export async function updateChasseur(chasseur) {
+    const chasseurId = chasseur.getId();
+    const armeEquipeeId = chasseur.getArmeEquipee().getId();
+    const monstresFavorisIds = chasseur.getMonstresFavoris().map(monstre => monstre.getId());
+    const setArmureEquipeeId = chasseur.getSetArmureEquipee().getId();
+
+    const chasseurSimple = {
+        id: chasseurId,
+        nom: chasseur.getNom(),
+        rangDeChasseur: chasseur.getRang(),
+        specialisation: chasseur.getSpecialisation(),
+        armeEquipee: armeEquipeeId,
+        monstresFavoris: monstresFavorisIds,
+        notes: chasseur.getNotes(),
+        setArmureEquipee: setArmureEquipeeId,
+    };
     try {
         const response = await fetch(`${config.apiUrl}/chasseurs/${chasseur.getId()}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(chasseur)
+            body: JSON.stringify(chasseurSimple)
         });
 
         if (!response.ok) {

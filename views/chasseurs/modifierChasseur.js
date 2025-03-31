@@ -76,13 +76,12 @@ export async function afficherFormulaireModificationChasseur(idChasseur) {
                 chasseur.setArmeEquipee(armeEquipee);
                 
                 console.log(armureEquipee);
-                chasseur.setArmureEquipee(armureEquipee);
+                chasseur.setArmure(armureEquipee);
 
                 chasseurMap.set(idChasseur, chasseur);
 
                 const success = await updateChasseur(chasseur);
                 if (success) {
-                    localStorage.setItem("chasseurs", JSON.stringify(Array.from(chasseurMap.entries())));
                     afficherDetailChasseur(idChasseur);
                 } else {
                     alert("Erreur lors de la mise à jour du chasseur.");
