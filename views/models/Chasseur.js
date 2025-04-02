@@ -1,4 +1,8 @@
 // Classe représentant un chasseur
+import Arme from "./Arme";
+import Monstre from "./Monstre";
+import Armure from "./Armure";
+
 class Chasseur {
     /**
      * Crée une instance de Chasseur.
@@ -39,6 +43,10 @@ class Chasseur {
         return this.specialisation;
     }
 
+    /**
+     * Récupère l'arme équipée.
+     * @returns {Arme} L'arme équipée.
+     */
     getArmeEquipee() {
         return this.armeEquipee;
     }

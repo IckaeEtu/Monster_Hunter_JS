@@ -375,20 +375,32 @@ export async function modifierChasseur(chasseur) {
 
 export async function creerChasseur(chasseur) {
     try {
+        const nom = chasseur.getNom();
+        const rang = chasseur.getRang();
+        const specialisation = chasseur.getSpecialisation();
+        const armeEquipee = chasseur.getArmeEquipee();
+        console.log("arme equipe", armeEquipee);
+        const idArme = armeEquipee.getId();
+        const monstresFavoris = chasseur.getMonstresFavoris();
+        const idMonstres = monstresFavoris.map(monstre => monstre.getId());
+        const notes = chasseur.getNotes();
+        const setArmureEquipee = chasseur.getArmureEquipee();
+        const idArmure = setArmureEquipee.getId();
+
         const response = await fetch(`${config.apiUrl}/chasseurs`, {
             method: 'POST', // Utilisez POST pour créer un nouvel objet
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                nom: chasseur.getNom(),
-                rang_de_chasseur: chasseur.getRang(),
-                specialisation: chasseur.getSpecialisation(),
+                nom: nom,
+                rang_de_chasseur: rang,
+                specialisation: specialisation,
                 // Il faut être sûr que ça envoie l'ID et non pas l'objet
-                armeEquipee: chasseur.getArmeEquipee().getId(), 
-                monstresFavoris: chasseur.getMonstresFavoris().map(monstre => monstre.getId()), 
-                notes: chasseur.getNotes(),
-                setArmureEquipee: chasseur.getArmureEquipee().getId(), 
+                armeEquipee: idArme, 
+                monstresFavoris: idMonstres, 
+                notes: notes,
+                setArmureEquipee: idArmure, 
             }),
         });
 
