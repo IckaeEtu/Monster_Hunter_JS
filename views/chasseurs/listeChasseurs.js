@@ -17,108 +17,229 @@ export async function afficherListeChasseurs() {
         return;
     }
 
-    document.getElementById("titrePage").innerText = "Liste des chasseurs";
-    content.innerHTML = "";
+    // Vérification de la page actuelle
+    if (window.location.hash === "#/chasseurs") {
+        document.getElementById("titrePage").innerText = "Liste des chasseurs";
+        content.innerHTML = "";
 
-    // Conteneur principal pour la grille et la sidebar
-    const mainContainer = document.createElement("div");
-    mainContainer.id = "main-container";
-    content.appendChild(mainContainer);
+        // Ajout de la barre de recherche
+        const rechercheContainer = document.createElement("div");
+        rechercheContainer.id = "recherche-container";
+        content.appendChild(rechercheContainer);
 
-    // Conteneur pour la grille des chasseurs
-    const listeChasseursDiv = document.createElement("div");
-    listeChasseursDiv.id = "liste-chasseurs";
-    listeChasseursDiv.classList.add("liste-chasseurs");
-    mainContainer.appendChild(listeChasseursDiv);
+        const rechercheInput = document.createElement("input");
+        rechercheInput.type = "text";
+        rechercheInput.id = "recherche-chasseur";
+        rechercheInput.placeholder = "Rechercher un chasseur...";
+        rechercheContainer.appendChild(rechercheInput);
 
-    // Conteneur pour les favoris
-    const favorisContainer = document.createElement("div");
-    favorisContainer.id = "favoris-container";
-    favorisContainer.classList.add("favoris-container");
-    mainContainer.appendChild(favorisContainer);
+        // Conteneur principal pour la grille et la sidebar
+        const mainContainer = document.createElement("div");
+        mainContainer.id = "main-container";
+        content.appendChild(mainContainer);
 
-    const titreFavoris = document.createElement("h2");
-    titreFavoris.textContent = "Favoris";
-    favorisContainer.appendChild(titreFavoris);
+        // Conteneur pour la grille des chasseurs
+        const listeChasseursDiv = document.createElement("div");
+        listeChasseursDiv.id = "liste-chasseurs";
+        listeChasseursDiv.classList.add("liste-chasseurs");
+        mainContainer.appendChild(listeChasseursDiv);
 
-    const favorisList = document.createElement("ul");
-    favorisContainer.appendChild(favorisList);
+        // Conteneur pour les favoris
+        const favorisContainer = document.createElement("div");
+        favorisContainer.id = "favoris-container";
+        favorisContainer.classList.add("favoris-container");
+        mainContainer.appendChild(favorisContainer);
 
-    // Ajout de la div pour les boutons de pagination
-    const paginationDiv = document.createElement("div");
-    paginationDiv.id = "pagination-container";
-    content.appendChild(paginationDiv);
+        const titreFavoris = document.createElement("h2");
+        titreFavoris.textContent = "Favoris";
+        favorisContainer.appendChild(titreFavoris);
 
-    $(paginationDiv).pagination({
-        dataSource: Array.from(chasseurMap.values()),
-        pageSize: 6,
-        callback: function (data, pagination) {
-            listeChasseursDiv.innerHTML = "";
+        const favorisList = document.createElement("ul");
+        favorisContainer.appendChild(favorisList);
 
-            // Mise à jour des favoris
-            favorisList.innerHTML = "";
-            const favorisIds = getFavorisChasseurs();
-            if (favorisIds.length > 0) {
-                favorisIds.forEach((id) => {
-                    const chasseur = chasseurMap.get(id);
-                    if (chasseur) {
-                        // Création d'un lien vers la page de détails
-                        const favoriItem = document.createElement("li");
-                        favorisList.appendChild(favoriItem);
+        // Ajout de la div pour les boutons de pagination
+        const paginationDiv = document.createElement("div");
+        paginationDiv.id = "pagination-container";
+        content.appendChild(paginationDiv);
 
-                        const favoriLink = document.createElement("a");
-                        favoriLink.textContent = chasseur.getNom();
-                        favoriLink.href = `#/chasseurs/${chasseur.getId()}`;
-                        favoriLink.classList.add("favori-lien-details");
-                        favoriItem.appendChild(favoriLink);
+        const chasseurs = Array.from(chasseurMap.values());
+        let filteredChasseurs = chasseurs; // Initialise avec tous les chasseurs
 
-                        // Bouton "Supprimer des favoris"
-                        const supprimerFavoriBtn = document.createElement("button");
-                        supprimerFavoriBtn.textContent = "Supprimer";
-                        supprimerFavoriBtn.classList.add("supprimer-favori-btn");
-                        supprimerFavoriBtn.addEventListener("click", (e) => {
-                            e.preventDefault(); // Empêcher la navigation
+        $(paginationDiv).pagination({
+            dataSource: filteredChasseurs,
+            pageSize: 6,
+            callback: function (data, pagination) {
+                listeChasseursDiv.innerHTML = "";
+
+                // Mise à jour des favoris
+                favorisList.innerHTML = "";
+                const favorisIds = getFavorisChasseurs();
+                if (favorisIds.length > 0) {
+                    favorisIds.forEach((id) => {
+                        const chasseur = chasseurMap.get(id);
+                        if (chasseur) {
+                            // Création d'un lien vers la page de détails
+                            const favoriItem = document.createElement("li");
+                            favorisList.appendChild(favoriItem);
+
+                            const favoriLink = document.createElement("a");
+                            favoriLink.textContent = chasseur.getNom();
+                            favoriLink.href = `#/chasseurs/${chasseur.getId()}`;
+                            favoriLink.classList.add("favori-lien-details");
+                            favoriItem.appendChild(favoriLink);
+
+                            // Icône "Supprimer des favoris" (croix)
+                            const supprimerFavoriIcon = document.createElement("i");
+                            supprimerFavoriIcon.classList.add("fas", "fa-times", "supprimer-favori-icon"); // Icône de croix de Font Awesome
+                            supprimerFavoriIcon.addEventListener("click", (e) => {
+                                e.preventDefault();
+                                supprimerFavoriChasseur(chasseur.getId());
+                                afficherListeChasseurs();
+                            });
+                            favoriLink.appendChild(supprimerFavoriIcon);
+                        }
+                    });
+                } else {
+                    favorisList.innerHTML = "Aucun favori.";
+                }
+
+                data.forEach((chasseur) => {
+                    const chasseurCard = document.createElement("div");
+                    chasseurCard.classList.add("chasseur-card");
+                    const imageChasseur = document.createElement("img");
+                    imageChasseur.src = `/style/images/chasseurs/chasseur.webp`;
+                    imageChasseur.alt = `Image de ${chasseur.getNom()}`;
+                    imageChasseur.classList.add("chasseur-image");
+                    chasseurCard.appendChild(imageChasseur);
+
+                    const nomChasseur = document.createElement("h3");
+                    nomChasseur.textContent = chasseur.getNom();
+                    chasseurCard.appendChild(nomChasseur);
+
+                    const lienDetail = document.createElement("a");
+                    lienDetail.href = `#/chasseurs/${chasseur.getId()}`;
+                    lienDetail.textContent = "Détails";
+                    lienDetail.classList.add("chasseur-lien-details");
+                    chasseurCard.appendChild(lienDetail);
+
+                    // Icône "Ajouter aux favoris" (cœur)
+                    const ajouterFavoriIcon = document.createElement("i");
+                    ajouterFavoriIcon.classList.add("far", "fa-heart", "ajouter-favori-icon"); // Icône de cœur vide
+                    ajouterFavoriIcon.addEventListener("click", () => {
+                        if (estFavoriChasseur(chasseur.getId())) {
                             supprimerFavoriChasseur(chasseur.getId());
-                            afficherListeChasseurs(); // Recharger la liste pour mettre à jour l'affichage
-                        });
-                        favoriLink.appendChild(supprimerFavoriBtn);
+                            ajouterFavoriIcon.classList.remove("fas");
+                            ajouterFavoriIcon.classList.add("far");
+                        } else {
+                            ajouterFavoriChasseur(chasseur.getId());
+                            ajouterFavoriIcon.classList.remove("far");
+                            ajouterFavoriIcon.classList.add("fas");
+                        }
+                        afficherListeChasseurs();
+                    });
+                    chasseurCard.appendChild(ajouterFavoriIcon);
+
+                    // Mettre à jour l'icône en fonction de l'état de favori
+                    if (estFavoriChasseur(chasseur.getId())) {
+                        ajouterFavoriIcon.classList.remove("far");
+                        ajouterFavoriIcon.classList.add("fas");
                     }
+
+                    listeChasseursDiv.appendChild(chasseurCard);
                 });
-            } else {
-                favorisList.innerHTML = "Aucun favori.";
-            }
+            },
+        });
 
-            data.forEach((chasseur) => {
-                const chasseurCard = document.createElement("div");
-                chasseurCard.classList.add("chasseur-card");
-                const imageChasseur = document.createElement("img");
-                imageChasseur.src = `/style/images/chasseurs/chasseur.webp`;
-                imageChasseur.alt = `Image de ${chasseur.getNom()}`;
-                imageChasseur.classList.add("chasseur-image");
-                chasseurCard.appendChild(imageChasseur);
+        rechercheInput.addEventListener("input", function () {
+            const rechercheTerme = rechercheInput.value.toLowerCase();
+            filteredChasseurs = chasseurs.filter(chasseur =>
+                chasseur.getNom().toLowerCase().includes(rechercheTerme)
+            );
 
-                const nomChasseur = document.createElement("h3");
-                nomChasseur.textContent = chasseur.getNom();
-                chasseurCard.appendChild(nomChasseur);
+            $(paginationDiv).pagination('destroy');
+            $(paginationDiv).pagination({
+                dataSource: filteredChasseurs,
+                pageSize: 6,
+                callback: function (data, pagination) {
+                    listeChasseursDiv.innerHTML = "";
+                    favorisList.innerHTML = "";
+                    const favorisIds = getFavorisChasseurs();
+                    if (favorisIds.length > 0) {
+                        favorisIds.forEach((id) => {
+                            const chasseur = chasseurMap.get(id);
+                            if (chasseur) {
+                                // Création d'un lien vers la page de détails
+                                const favoriItem = document.createElement("li");
+                                favorisList.appendChild(favoriItem);
 
-                const lienDetail = document.createElement("a");
-                lienDetail.href = `#/chasseurs/${chasseur.getId()}`;
-                lienDetail.textContent = "Détails";
-                lienDetail.classList.add("chasseur-lien-details");
-                chasseurCard.appendChild(lienDetail);
+                                const favoriLink = document.createElement("a");
+                                favoriLink.textContent = chasseur.getNom();
+                                favoriLink.href = `#/chasseurs/${chasseur.getId()}`;
+                                favoriLink.classList.add("favori-lien-details");
+                                favoriItem.appendChild(favoriLink);
 
-                // Bouton "Ajouter aux favoris"
-                const ajouterFavoriBtn = document.createElement("button");
-                ajouterFavoriBtn.textContent = "Ajouter favori";
-                ajouterFavoriBtn.classList.add("ajouter-favori-btn");
-                ajouterFavoriBtn.addEventListener("click", () => {
-                    ajouterFavoriChasseur(chasseur.getId());
-                    afficherListeChasseurs(); // Recharger la liste pour mettre à jour l'affichage
-                });
-                chasseurCard.appendChild(ajouterFavoriBtn);
+                                // Icône "Supprimer des favoris" (croix)
+                                const supprimerFavoriIcon = document.createElement("i");
+                                supprimerFavoriIcon.classList.add("fas", "fa-times", "supprimer-favori-icon"); // Icône de croix de Font Awesome
+                                supprimerFavoriIcon.addEventListener("click", (e) => {
+                                    e.preventDefault();
+                                    supprimerFavoriChasseur(chasseur.getId());
+                                    afficherListeChasseurs();
+                                });
+                                favoriLink.appendChild(supprimerFavoriIcon);
+                            }
+                        });
+                    } else {
+                        favorisList.innerHTML = "Aucun favori.";
+                    }
+                    data.forEach((chasseur) => {
+                        const chasseurCard = document.createElement("div");
+                        chasseurCard.classList.add("chasseur-card");
+                        const imageChasseur = document.createElement("img");
+                        imageChasseur.src = `/style/images/chasseurs/chasseur.webp`;
+                        imageChasseur.alt = `Image de ${chasseur.getNom()}`;
+                        imageChasseur.classList.add("chasseur-image");
+                        chasseurCard.appendChild(imageChasseur);
 
-                listeChasseursDiv.appendChild(chasseurCard);
+                        const nomChasseur = document.createElement("h3");
+                        nomChasseur.textContent = chasseur.getNom();
+                        chasseurCard.appendChild(nomChasseur);
+
+                        const lienDetail = document.createElement("a");
+                        lienDetail.href = `#/chasseurs/${chasseur.getId()}`;
+                        lienDetail.textContent = "Détails";
+                        lienDetail.classList.add("chasseur-lien-details");
+                        chasseurCard.appendChild(lienDetail);
+
+                        // Icône "Ajouter aux favoris" (cœur)
+                        const ajouterFavoriIcon = document.createElement("i");
+                        ajouterFavoriIcon.classList.add("far", "fa-heart", "ajouter-favori-icon"); // Icône de cœur vide
+                        ajouterFavoriIcon.addEventListener("click", () => {
+                            if (estFavoriChasseur(chasseur.getId())) {
+                                supprimerFavoriChasseur(chasseur.getId());
+                                ajouterFavoriIcon.classList.remove("fas");
+                                ajouterFavoriIcon.classList.add("far");
+                            } else {
+                                ajouterFavoriChasseur(chasseur.getId());
+                                ajouterFavoriIcon.classList.remove("far");
+                                ajouterFavoriIcon.classList.add("fas");
+                            }
+                            afficherListeChasseurs();
+                        });
+                        chasseurCard.appendChild(ajouterFavoriIcon);
+
+                        // Mettre à jour l'icône en fonction de l'état de favori
+                        if (estFavoriChasseur(chasseur.getId())) {
+                            ajouterFavoriIcon.classList.remove("far");
+                            ajouterFavoriIcon.classList.add("fas");
+                        }
+
+                        listeChasseursDiv.appendChild(chasseurCard);
+                    });
+                },
             });
-        },
-    });
+        });
+    } else {
+        console.log("Ce n'est pas la page de la liste des chasseurs.");
+    }
 }
