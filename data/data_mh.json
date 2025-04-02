@@ -37,6 +37,70 @@
             ],
             "notes": 5,
             "setArmureEquipee": 3
+        },{
+            "id": 4,
+            "nom": "Zara",
+            "rang_de_chasseur": 67,
+            "specialisation": "Maître d'armes",
+            "armeEquipee": 4,
+            "monstresFavoris": [
+                5,
+                6
+            ],
+            "notes": 4.7,
+            "setArmureEquipee": 5
+        },
+        {
+            "id": 5,
+            "nom": "Kenji",
+            "rang_de_chasseur": 92,
+            "specialisation": "Artilleur",
+            "armeEquipee": 5,
+            "monstresFavoris": [
+                7,
+                8
+            ],
+            "notes": 4.9,
+            "setArmureEquipee": 6
+        },
+        {
+            "id": 6,
+            "nom": "Sasha",
+            "rang_de_chasseur": 23,
+            "specialisation": "Maître d'armes",
+            "armeEquipee": 6,
+            "monstresFavoris": [
+                9,
+                10
+            ],
+            "notes": 4.6,
+            "setArmureEquipee": 7
+        },
+                {
+            "id": 7,
+            "nom": "Drake",
+            "rang_de_chasseur": 78,
+            "specialisation": "Épéiste",
+            "armeEquipee": 7,
+            "monstresFavoris": [
+                11,
+                12
+            ],
+            "notes": 4.8,
+            "setArmureEquipee": 8
+        },
+        {
+            "id": 8,
+            "nom": "Rina",
+            "rang_de_chasseur": 55,
+            "specialisation": "Artilleur",
+            "armeEquipee": 8,
+            "monstresFavoris": [
+                13,
+                14
+            ],
+            "notes": 4.5,
+            "setArmureEquipee": 1
         }
     ],
     "armes": [
@@ -60,12 +124,48 @@
             "type": "Epée longue",
             "attaque": 180,
             "element": "Dragon"
+        },
+        {
+            "id": 4,
+            "nom": "Marteau de guerre",
+            "type": "Marteau",
+            "attaque": 150,
+            "element": "Explosion"
+        },
+        {
+            "id": 5,
+            "nom": "Fusarbalète lourde X",
+            "type": "Fusarbalète lourde",
+            "attaque": 110,
+            "element": null
+        },
+        {
+            "id": 6,
+            "nom": "Volto-hache royale",
+            "type": "Volto-hache",
+            "attaque": 160,
+            "element": "Foudre"
+        },
+        {
+            "id": 7,
+            "nom": "Lame démoniaque",
+            "type": "Double lames",
+            "attaque": 140,
+            "element": "Dragon"
+        },
+        {
+            "id": 8,
+            "nom": "Cor de chasse mélodique",
+            "type": "Cor de chasse",
+            "attaque": 130,
+            "element": "Glace"
         }
     ],
     "monstres": [
         {
             "id": 1,
             "nom": "Rathalos",
+            "img": "MHW-Rathalos_Icon.png",
             "type_id": [
                 7
             ],
@@ -77,14 +177,18 @@
                 "Glace"
             ],
             "materiaux": [
-                "Écaille de Rathalos",
-                "Griffe de Rathalos"
+                "Écailles de Rathalos",
+                "Griffes de Rathalos",
+                "Ailes de Rathalos",
+                "Queue de Rathalos",
+                "Rubis de Rathalos"
             ],
             "notes": 4.2
         },
         {
             "id": 2,
             "nom": "Khezu",
+            "img": "MHRise-Khezu_Icon.png",
             "type_id": [
                 3
             ],
@@ -97,13 +201,17 @@
             ],
             "materiaux": [
                 "Peau de Khezu",
-                "Cerveau de Khezu"
+                "Cerveau de Khezu",
+                "Queue de Khezu",
+                "Os de Khezu",
+                "Ampoule pâle"
             ],
             "notes": 4.8
         },
         {
             "id": 3,
             "nom": "Tigrex",
+            "img": "MHWI-Tigrex_Icon.png",
             "type_id": [
                 6
             ],
@@ -116,13 +224,17 @@
             ],
             "materiaux": [
                 "Griffes de Tigrex",
-                "Peau de Tigrex"
+                "Peau de Tigrex",
+                "Queue de Tigrex",
+                "Mâchoire de Tigrex",
+                "Écaille de Tigrex"
             ],
             "notes": 4.9
         },
         {
             "id": 4,
             "nom": "Zinogre",
+            "img": "MHWI-Zinogre_Icon.png",
             "type_id": [
                 7
             ],
@@ -135,13 +247,17 @@
             ],
             "materiaux": [
                 "Écaille de Zinogre",
-                "Corne de Zinogre"
+                "Corne de Zinogre",
+                "Queue de Zinogre",
+                "Griffe de Zinogre",
+                "Gemme de Zinogre"
             ],
             "notes": 4.9
         },
         {
             "id": 5,
             "nom": "Brachydios",
+            "img": "MHWI-Brachydios_Icon.png",
             "type_id": [
                 2
             ],
@@ -154,13 +270,17 @@
             ],
             "materiaux": [
                 "Peau de Brachydios",
-                "Sphères de Brachydios"
+                "Sphères de Brachydios",
+                "Queue de Brachydios",
+                "Masse de Brachydios",
+                "Fluide explosif"
             ],
             "notes": 4.5
         },
         {
             "id": 6,
             "nom": "Nargacuga",
+            "img": "MHWI-Nargacuga_Icon.png",
             "type_id": [
                 6
             ],
@@ -173,13 +293,17 @@
             ],
             "materiaux": [
                 "Ailes de Nargacuga",
-                "Griffes de Nargacuga"
+                "Griffes de Nargacuga",
+                "Queue de Nargacuga",
+                "Écaille de Nargacuga",
+                "Médulle de Nargacuga"
             ],
             "notes": 4.6
         },
         {
             "id": 7,
             "nom": "Zorah Magdaros",
+            "img": "MHW-Legiana_Icon.png",
             "type_id": [
                 3
             ],
@@ -192,13 +316,17 @@
             ],
             "materiaux": [
                 "Écailles de Zorah Magdaros",
-                "Flammes de Zorah Magdaros"
+                "Flammes de Zorah Magdaros",
+                "Magma de Zorah Magdaros",
+                "Carapace de Zorah Magdaros",
+                "Coeur de Zorah Magdaros"
             ],
             "notes": 4.7
         },
         {
             "id": 8,
             "nom": "Legiana",
+            "img": "MHW-Legiana_Icon.png",
             "type_id": [
                 4
             ],
@@ -211,13 +339,17 @@
             ],
             "materiaux": [
                 "Ailes de Legiana",
-                "Peau de Legiana"
+                "Peau de Legiana",
+                "Queue de Legiana",
+                "Griffe de Legiana",
+                "Cristal de Legiana"
             ],
             "notes": 4.4
         },
         {
             "id": 9,
             "nom": "Diablos",
+            "img": "MHW-Diablos_Icon.png",
             "type_id": [
                 10
             ],
@@ -230,13 +362,17 @@
             ],
             "materiaux": [
                 "Cornes de Diablos",
-                "Peau de Diablos"
+                "Peau de Diablos",
+                "Queue de Diablos",
+                "Carapace de Diablos",
+                "Écaille de Diablos"
             ],
             "notes": 4.8
         },
         {
             "id": 10,
             "nom": "Nergigante",
+            "img": "MHW-Nergigante_Icon.png",
             "type_id": [
                 12
             ],
@@ -249,13 +385,17 @@
             ],
             "materiaux": [
                 "Cornes de Nergigante",
-                "Regeneration de Nergigante"
+                "Regeneration de Nergigante",
+                "Écaille de Nergigante",
+                "Queue de Nergigante",
+                "Griffe de Nergigante"
             ],
             "notes": 4.9
         },
         {
             "id": 11,
             "nom": "Lunastra",
+            "img": "MHW-Lunastra_Icon.png",
             "type_id": [
                 7
             ],
@@ -268,13 +408,17 @@
             ],
             "materiaux": [
                 "Écailles de Lunastra",
-                "Flammes de Lunastra"
+                "Flammes de Lunastra",
+                "Crinière de Lunastra",
+                "Queue de Lunastra",
+                "Gemme de Lunastra"
             ],
             "notes": 4.8
         },
         {
             "id": 12,
             "nom": "Vaal Hazak",
+            "img": "MHW-Rathalos_Icon.png",
             "type_id": [
                 3
             ],
@@ -287,7 +431,10 @@
             ],
             "materiaux": [
                 "Peau de Vaal Hazak",
-                "Crocs de Vaal Hazak"
+                "Crocs de Vaal Hazak",
+                "Queue de Vaal Hazak",
+                "Griffe de Vaal Hazak",
+                "Membrane de Vaal Hazak"
             ],
             "notes": 4.6
         },
@@ -306,13 +453,17 @@
             ],
             "materiaux": [
                 "Écailles de Kushala Daora",
-                "Griffes de Kushala Daora"
+                "Griffes de Kushala Daora",
+                "Queue de Kushala Daora",
+                "Corne de Kushala Daora",
+                "Gemme de Kushala Daora"
             ],
             "notes": 4.5
         },
         {
             "id": 14,
             "nom": "Teostra",
+            "img": "MHW-Rathalos_Icon.png",
             "type_id": [
                 12
             ],
@@ -325,7 +476,10 @@
             ],
             "materiaux": [
                 "Flammes de Teostra",
-                "Écailles de Teostra"
+                "Écailles de Teostra",
+                "Crinière de Teostra",
+                "Queue de Teostra",
+                "Gemme de Teostra"
             ],
             "notes": 4.7
         }
@@ -489,15 +643,15 @@
             "monstre_id": 1,
             "composants": [
                 {
-                    "partie": "Queue",
+                    "partie": "Queue de Rathalos",
                     "quantité": 2
                 },
                 {
-                    "partie": "Ailes",
+                    "partie": "Ailes de Rathalos",
                     "quantité": 3
                 },
                 {
-                    "partie": "Écailles",
+                    "partie": "Écailles de Rathalos",
                     "quantité": 5
                 }
             ],
@@ -509,15 +663,15 @@
             "monstre_id": 2,
             "composants": [
                 {
-                    "partie": "Peau",
+                    "partie": "Peau de Khezu",
                     "quantité": 6
                 },
                 {
-                    "partie": "Cerveau",
+                    "partie": "Cerveau de Khezu",
                     "quantité": 2
                 },
                 {
-                    "partie": "Os",
+                    "partie": "Os de Khezu",
                     "quantité": 4
                 }
             ],
@@ -529,15 +683,15 @@
             "monstre_id": 3,
             "composants": [
                 {
-                    "partie": "Griffes",
+                    "partie": "Griffes de Tigrex",
                     "quantité": 4
                 },
                 {
-                    "partie": "Queue",
+                    "partie": "Queue de Tigrex",
                     "quantité": 3
                 },
                 {
-                    "partie": "Peau",
+                    "partie": "Peau de Tigrex",
                     "quantité": 5
                 }
             ],
@@ -549,15 +703,15 @@
             "monstre_id": 4,
             "composants": [
                 {
-                    "partie": "Écailles",
+                    "partie": "Écailles de Zinogre",
                     "quantité": 4
                 },
                 {
-                    "partie": "Ailes",
+                    "partie": "Ailes de Zinogre",
                     "quantité": 3
                 },
                 {
-                    "partie": "Queue",
+                    "partie": "Queue de Zinogre",
                     "quantité": 2
                 }
             ],
@@ -569,15 +723,15 @@
             "monstre_id": 5,
             "composants": [
                 {
-                    "partie": "Peau",
+                    "partie": "Peau de Brachydios",
                     "quantité": 5
                 },
                 {
-                    "partie": "Queue",
+                    "partie": "Queue de Brachydios",
                     "quantité": 3
                 },
                 {
-                    "partie": "Sphères",
+                    "partie": "Sphères de Brachydios",
                     "quantité": 4
                 }
             ],
@@ -589,15 +743,15 @@
             "monstre_id": 6,
             "composants": [
                 {
-                    "partie": "Ailes",
+                    "partie": "Ailes de Nargacuga",
                     "quantité": 4
                 },
                 {
-                    "partie": "Queue",
+                    "partie": "Queue de Nargacuga",
                     "quantité": 2
                 },
                 {
-                    "partie": "Griffes",
+                    "partie": "Griffes de Nargacuga",
                     "quantité": 5
                 }
             ],
@@ -609,15 +763,15 @@
             "monstre_id": 9,
             "composants": [
                 {
-                    "partie": "Corne",
+                    "partie": "Corne de Diablos",
                     "quantité": 5
                 },
                 {
-                    "partie": "Queue",
+                    "partie": "Queue de Diablos",
                     "quantité": 3
                 },
                 {
-                    "partie": "Peau",
+                    "partie": "Peau de Diablos",
                     "quantité": 6
                 }
             ],
@@ -629,15 +783,15 @@
             "monstre_id": 14,
             "composants": [
                 {
-                    "partie": "Flamme",
+                    "partie": "Flammes de Teostra",
                     "quantité": 6
                 },
                 {
-                    "partie": "Queue",
+                    "partie": "Queue de Teostra",
                     "quantité": 3
                 },
                 {
-                    "partie": "Écailles",
+                    "partie": "Écailles de Teostra",
                     "quantité": 5
                 }
             ],

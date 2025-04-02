@@ -5,6 +5,11 @@
 import { afficherDetailChasseur } from "./views/chasseurs/detailChasseur.js";
 import { afficherListeChasseurs } from "./views/chasseurs/listeChasseurs.js";
 import { afficherPageAccueil } from "./views/common/accueil.js";
+import { afficherFavorisChasseurs } from "./views/favoris/afficherFavoris.js";
+import { afficherCoffre } from "./views/coffres/coffres.js";
+import { afficherArmures } from "./views/armures/armures.js";
+import { afficherTerrainDeChasse } from "./views/terraindechasse/terrainDeChasse.js";
+import { afficherMonstresParEnvironnementRoute } from "./views/terraindechasse/terrainDeChasse.js";
 
 function router() {
     console.log(window.location);
@@ -20,13 +25,30 @@ function router() {
             if (segments.length === 2) { // Vérifier la longueur
                 afficherListeChasseurs();
             } else if (segments.length === 3) {
-                const id = String(segments[2]); // Utiliser segments[1]
+                const id = String(segments[2]);
                 if (!isNaN(id)) {
                     afficherDetailChasseur(id);
                 } else {
                     console.error("ID de chasseur invalide.");
                     afficherPageAccueil();
                 }
+            }
+            break;
+        case "favoris":
+            afficherFavorisChasseurs();
+            break;
+        case "coffres":
+            afficherCoffre();
+            break;
+        case "armures":
+            afficherArmures();
+            break;
+        case "terrain_de_chasse":
+            if (segments.length === 2) {
+                afficherTerrainDeChasse();
+            } else if (segments.length === 3) {
+                const nomEnvironnement = segments[2];
+                afficherMonstresParEnvironnementRoute(nomEnvironnement);
             }
             break;
         default:

@@ -1,0 +1,244 @@
+/* Index */
+
+body {
+    font-family: 'Papyrus', fantasy;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    color: #553300;
+}
+
+header {
+    background-color: rgba(100, 50, 20, 0.8);
+    padding: 20px 0;
+    border-bottom: 2px solid #886633;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 80px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: antiquewhite;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 2px solid #886633;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(150, 100, 50, 0.5);
+}
+
+#titrePage {
+    text-align: center;
+    margin-top: 30px;
+    color: #886633;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#content {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.chasseur-image {
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: contain;
+}
+
+/* Style de détail chasseur */
+.chasseur-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.info-card,
+.equipement-card,
+.monstres-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.info-card h2,
+.equipement-card h2,
+.monstres-card h2 {
+    margin-top: 0;
+}
+
+.monstre-card img {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* Coffre */
+
+.coffre-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.objet-card {
+    width: 100px;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.objet-card p {
+    margin: 0;
+}
+
+/* Monstre */
+
+.monstre-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.monstre-table th,
+.monstre-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.monstre-table th {
+    background-color: #f2f2f2;
+}
+
+.monstre-table button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.monstre-image {
+    max-width: 50px;
+    max-height: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* Armures */
+.armure-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.armure-card h3 {
+    margin-top: 0;
+    color: #886633;
+}
+
+.armure-card p {
+    margin-bottom: 10px;
+}
+
+.armure-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.armure-card li {
+    margin-bottom: 5px;
+}
+
+/* Styles pour la liste des chasseurs */
+#main-container {
+    display: flex; /* Utilisation de flex pour la mise en page principale */
+    justify-content: space-between; /* Espacement entre la grille et la sidebar */
+}
+
+#liste-chasseurs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: calc(100% - 220px); /* Ajuster la largeur pour laisser de la place au conteneur des favoris */
+}
+
+.chasseur-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.chasseur-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.chasseur-lien-details {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.chasseur-lien-details:hover {
+    text-decoration: underline;
+}
+
+/* Styles pour le conteneur des favoris */
+#favoris-container {
+    width: 200px;
+    padding: 15px;
+    border-left: 1px solid #ddd;
+    margin-left: 20px;
+}
+
+#favoris-container h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+#favoris-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+#favoris-container li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#favoris-container li:last-child {
+    border-bottom: none;
+}

@@ -7,10 +7,10 @@ class Chasseur {
      * @param {string} nom - Le nom du chasseur.
      * @param {number} rangDeChasseur - Le niveau du chasseur.
      * @param {string} specialisation - La spécialisation du chasseur.
-     * @param {number} armeEquipee - L'ID de l'arme équipée.
-     * @param {number[]} monstresFavoris - Un tableau des IDs des monstres favoris.
+     * @param {Arme} armeEquipee - L'ID de l'arme équipée.
+     * @param {Monstre[]} monstresFavoris - Un tableau des IDs des monstres favoris.
      * @param {number} notes - La note du chasseur.
-     * @param {number} setArmureEquipee - L'ID du set d'armure équipé.
+     * @param {Armure} setArmureEquipee - L'ID du set d'armure équipé.
      */
     constructor(id, nom, rangDeChasseur, specialisation, armeEquipee, monstresFavoris, notes, setArmureEquipee) {
         this.id = id;
@@ -51,8 +51,40 @@ class Chasseur {
         return this.notes;
     }
 
-    getSetArmureEquipee() {
+    getArmureEquipee() {
         return this.setArmureEquipee;
+    }
+
+    setId(id) {
+        this.id = id;
+    }
+    
+    setNom(nom) {
+        this.nom = nom;
+    }
+
+    setRang(rangDeChasseur) {
+        this.rangDeChasseur = rangDeChasseur;
+    }
+
+    setSpecialisation(specialisation) {
+        this.specialisation = specialisation;
+    }
+
+    setArmeEquipee(armeEquipee) {
+        this.armeEquipee = armeEquipee;
+    }
+
+    setMonstresFavoris(monstresFavoris) {
+        this.monstresFavoris = monstresFavoris;
+    }
+
+    setNotes(notes) {
+        this.notes = notes;
+    }
+
+    setSetArmureEquipee(setArmureEquipee) {
+        this.setArmureEquipee = setArmureEquipee;
     }
 }
 

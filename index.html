@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Monster Hunter JS</title>
-        <script type="module" src="routeur.js"></script>
-    </head>
-    <body>
+<head>
+    <title>Monster Hunter JS</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.css"/>
+    <script type="module" src="routeur.js"></script>
+</head>
+<body>
+    <div id="popup" style="display: none; position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0, 0, 0, 0.8); color: white; padding: 10px 20px; border-radius: 5px; z-index: 1000;">
+        <span id="popup-message"></span>
+    </div>
+    <header>
         <nav>
-            <a href="#/">Accueil</a>
-            <a href="#/chasseurs">Liste des chasseurs</a>
+            <div class="logo">
+                <img src="style/images/logo_mh.png" alt="Logo Monster Hunter">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#/">Accueil</a></li>
+                <li><a href="#/chasseurs">Liste des chasseurs</a></li>
+                <li><a href="#/coffres">Coffres des matériaux</a></li>
+                <li><a href="#/armures">Voir les armures</a></li>
+                <li><a href="#/terrain_de_chasse">Terrain de chasse</a></li>
+            </ul>
         </nav>
-        <h1 id="titrePage">Monster Hunter JS</h1>
-        <main id="content">
-
-        </main>
-    </body>
+    </header>
+    <h1 id="titrePage">Monster Hunter JS</h1>
+    <main id="content">
+    </main>
+</body>
 </html>
