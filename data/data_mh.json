@@ -1,5 +1,5 @@
 {
-"chasseurs": [
+    "chasseurs": [
         {
             "id": 1,
             "nom": "Aiden",
@@ -37,7 +37,8 @@
             ],
             "notes": 5,
             "setArmureEquipee": 3
-        },{
+        },
+        {
             "id": 4,
             "nom": "Zara",
             "rang_de_chasseur": 67,
@@ -76,7 +77,7 @@
             "notes": 4.6,
             "setArmureEquipee": 7
         },
-                {
+        {
             "id": 7,
             "nom": "Drake",
             "rang_de_chasseur": 78,
@@ -101,6 +102,240 @@
             ],
             "notes": 4.5,
             "setArmureEquipee": 1
+        },
+        {
+            "id": 9,
+            "nom": "Orion",
+            "rang_de_chasseur": 30,
+            "specialisation": "Épéiste",
+            "armeEquipee": 1,
+            "monstresFavoris": [
+                4,
+                6
+            ],
+            "notes": 4.3,
+            "setArmureEquipee": 2
+        },
+        {
+            "id": 10,
+            "nom": "Nova",
+            "rang_de_chasseur": 60,
+            "specialisation": "Artilleur",
+            "armeEquipee": 3,
+            "monstresFavoris": [
+                8,
+                10
+            ],
+            "notes": 4.7,
+            "setArmureEquipee": 5
+        },
+        {
+            "id": 11,
+            "nom": "Rex",
+            "rang_de_chasseur": 40,
+            "specialisation": "Maître d'armes",
+            "armeEquipee": 6,
+            "monstresFavoris": [
+                12,
+                14
+            ],
+            "notes": 4.6,
+            "setArmureEquipee": 7
+        },
+        {
+            "id": 12,
+            "nom": "Luna",
+            "rang_de_chasseur": 70,
+            "specialisation": "Épéiste",
+            "armeEquipee": 2,
+            "monstresFavoris": [
+                1,
+                5
+            ],
+            "notes": 4.8,
+            "setArmureEquipee": 3
+        },
+        {
+            "id": 13,
+            "nom": "Thorne",
+            "rang_de_chasseur": 35,
+            "specialisation": "Artilleur",
+            "armeEquipee": 4,
+            "monstresFavoris": [
+                3,
+                7
+            ],
+            "notes": 4.4,
+            "setArmureEquipee": 6
+        },
+        {
+            "id": 14,
+            "nom": "Vesper",
+            "rang_de_chasseur": 80,
+            "specialisation": "Maître d'armes",
+            "armeEquipee": 8,
+            "monstresFavoris": [
+                9,
+                13
+            ],
+            "notes": 4.9,
+            "setArmureEquipee": 2
+        },
+        {
+            "id": 15,
+            "nom": "Zephyr",
+            "rang_de_chasseur": 50,
+            "specialisation": "Épéiste",
+            "armeEquipee": 5,
+            "monstresFavoris": [
+                2,
+                11
+            ],
+            "notes": 4.7,
+            "setArmureEquipee": 4
+        },
+        {
+            "id": 16,
+            "nom": "Willow",
+            "rang_de_chasseur": 25,
+            "specialisation": "Artilleur",
+            "armeEquipee": 7,
+            "monstresFavoris": [
+                6,
+                10
+            ],
+            "notes": 4.3,
+            "setArmureEquipee": 8
+        },
+        {
+            "id": 17,
+            "nom": "Cinder",
+            "rang_de_chasseur": 65,
+            "specialisation": "Épéiste",
+            "armeEquipee": 3,
+            "monstresFavoris": [
+                1,
+                8
+            ],
+            "notes": 4.6,
+            "setArmureEquipee": 5
+        },
+        {
+            "id": 18,
+            "nom": "Frost",
+            "rang_de_chasseur": 48,
+            "specialisation": "Artilleur",
+            "armeEquipee": 6,
+            "monstresFavoris": [
+                4,
+                13
+            ],
+            "notes": 4.8,
+            "setArmureEquipee": 2
+        },
+        {
+            "id": 19,
+            "nom": "Rune",
+            "rang_de_chasseur": 75,
+            "specialisation": "Maître d'armes",
+            "armeEquipee": 1,
+            "monstresFavoris": [
+                10,
+                14
+            ],
+            "notes": 4.9,
+            "setArmureEquipee": 6
+        },
+        {
+            "id": 20,
+            "nom": "Skylar",
+            "rang_de_chasseur": 38,
+            "specialisation": "Épéiste",
+            "armeEquipee": 8,
+            "monstresFavoris": [
+                2,
+                7
+            ],
+            "notes": 4.4,
+            "setArmureEquipee": 1
+        },
+        {
+            "id": 21,
+            "nom": "Blitz",
+            "rang_de_chasseur": 52,
+            "specialisation": "Artilleur",
+            "armeEquipee": 5,
+            "monstresFavoris": [
+                6,
+                11
+            ],
+            "notes": 4.7,
+            "setArmureEquipee": 3
+        },
+        {
+            "id": 22,
+            "nom": "Jett",
+            "rang_de_chasseur": 28,
+            "specialisation": "Maître d'armes",
+            "armeEquipee": 4,
+            "monstresFavoris": [
+                3,
+                9
+            ],
+            "notes": 4.3,
+            "setArmureEquipee": 8
+        },
+        {
+            "id": 23,
+            "nom": "Echo",
+            "rang_de_chasseur": 62,
+            "specialisation": "Épéiste",
+            "armeEquipee": 7,
+            "monstresFavoris": [
+                5,
+                12
+            ],
+            "notes": 4.5,
+            "setArmureEquipee": 4
+        },
+        {
+            "id": 24,
+            "nom": "Sage",
+            "rang_de_chasseur": 42,
+            "specialisation": "Artilleur",
+            "armeEquipee": 2,
+            "monstresFavoris": [
+                1,
+                14
+            ],
+            "notes": 4.6,
+            "setArmureEquipee": 7
+        },
+        {
+            "id": 25,
+            "nom": "Flare",
+            "rang_de_chasseur": 72,
+            "specialisation": "Maître d'armes",
+            "armeEquipee": 8,
+            "monstresFavoris": [
+                8,
+                10
+            ],
+            "notes": 4.8,
+            "setArmureEquipee": 2
+        },
+        {
+            "id": 26,
+            "nom": "Vex",
+            "rang_de_chasseur": 32,
+            "specialisation": "Épéiste",
+            "armeEquipee": 6,
+            "monstresFavoris": [
+                4,
+                13
+            ],
+            "notes": 4.9,
+            "setArmureEquipee": 6
         }
     ],
     "armes": [

@@ -6,6 +6,7 @@ import {
     ajouterFavoriChasseur,
     supprimerFavoriChasseur,
 } from "../../utils/favorisChasseurs.js";
+import { afficherFormulaireCreationChasseur } from "./creationChasseur.js";
 
 export async function afficherListeChasseurs() {
     console.log("Affichage de la liste des chasseurs");
@@ -37,6 +38,14 @@ export async function afficherListeChasseurs() {
         const mainContainer = document.createElement("div");
         mainContainer.id = "main-container";
         content.appendChild(mainContainer);
+
+        // Bouton pour afficher le formulaire de création
+        const boutonCreerChasseur = document.createElement("button");
+        boutonCreerChasseur.textContent = "Créer un Chasseur";
+        boutonCreerChasseur.addEventListener("click", () => {
+            afficherFormulaireCreationChasseur();
+        });
+        content.appendChild(boutonCreerChasseur);
 
         // Conteneur pour la grille des chasseurs
         const listeChasseursDiv = document.createElement("div");

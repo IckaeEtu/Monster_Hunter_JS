@@ -341,3 +341,65 @@ export async function getCoffre() {
     const coffre = JSON.parse(localStorage.getItem("mh_inventaire_composants")) || [];
     return coffre;
 }
+
+export async function modifierChasseur(chasseur) {
+    try {
+        const response = await fetch(`${config.apiUrl}/chasseurs/${chasseur.getId()}`, {
+            method: 'PUT', // Utilisez PUT pour remplacer l'objet existant
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: chasseur.getId(),
+                nom: chasseur.getNom(),
+                rang_de_chasseur: chasseur.getRang(),
+                specialisation: chasseur.getSpecialisation(),
+                armeEquipee: chasseur.getArmeEquipee().getId(), // Assurez-vous d'envoyer l'ID de l'arme
+                monstresFavoris: chasseur.getMonstresFavoris().map(monstre => monstre.getId()), // Assurez-vous d'envoyer les IDs des monstres
+                notes: chasseur.getNotes(),
+                setArmureEquipee: chasseur.getArmureEquipee().getId(), // Assurez-vous d'envoyer l'ID de l'armure
+            }),
+        });
+
+        if (!response.ok) {
+            throw new Error(`Erreur HTTP, status: ${response.status}`);
+        }
+
+        const chasseurModifie = await response.json();
+        return chasseurModifie;
+    } catch (error) {
+        console.error("Erreur lors de la modification du chasseur : ", error);
+        return null;
+    }
+}
+
+export async function creerChasseur(chasseur) {
+    try {
+        const response = await fetch(`${config.apiUrl}/chasseurs`, {
+            method: 'POST', // Utilisez POST pour créer un nouvel objet
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                nom: chasseur.getNom(),
+                rang_de_chasseur: chasseur.getRang(),
+                specialisation: chasseur.getSpecialisation(),
+                // Il faut être sûr que ça envoie l'ID et non pas l'objet
+                armeEquipee: chasseur.getArmeEquipee().getId(), 
+                monstresFavoris: chasseur.getMonstresFavoris().map(monstre => monstre.getId()), 
+                notes: chasseur.getNotes(),
+                setArmureEquipee: chasseur.getArmureEquipee().getId(), 
+            }),
+        });
+
+        if (!response.ok) {
+            throw new Error(`Erreur HTTP, status: ${response.status}`);
+        }
+
+        const nouveauChasseur = await response.json();
+        return nouveauChasseur;
+    } catch (error) {
+        console.error("Erreur lors de la création du chasseur : ", error);
+        return null;
+    }
+}
