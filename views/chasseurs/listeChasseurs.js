@@ -110,6 +110,7 @@ export async function afficherListeChasseurs() {
                     imageChasseur.src = `/style/images/chasseurs/chasseur.webp`;
                     imageChasseur.alt = `Image de ${chasseur.getNom()}`;
                     imageChasseur.classList.add("chasseur-image");
+                    imageChasseur.loading = "lazy"; // Ne sert plus a rien car la pagination limite le nombre de chasseur affiché
                     chasseurCard.appendChild(imageChasseur);
 
                     const nomChasseur = document.createElement("h3");
